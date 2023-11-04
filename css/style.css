@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul, ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+  
+img{
+max-width: 100%;
+text-align: center;
+}
+
+
+body{
+    background-color:rgb(248, 239, 232);
+}
+
+h2{
+    color: goldenrod;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3{ 
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+/* --- Header --- */
+
+
+header{
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header nav ul li a {
+    color: white;
+}
+
+
+@media (min-width:480px){
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-list{
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+   
+
+
+/*  --- Portada Index --- */
+
+.portada-index{
+    padding: 1rem;
+    height: 100vh;
+    background-image: url(../img/pies\ bailarina\ de\ ballet.jpg);
+    background-position: center;
+    background-size: cover;   
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.texto-portada{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(190, 186, 182, 0.945);
+    text-align: center;
+    padding: 3rem;
+    gap: 16px;
+    border-radius: 10px;
+    border: 2px solid black;
+
+    
+}
+
+
+
+/*  --- Beca --- */
+
+.beca {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.beca-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.beca-boton{
+    background-color: black;
+    padding: 1rem 2rem;
+    align-self: center;
+
+
+}
+
+@media (min-width:768px){
+
+.beca {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 80vh;
+
+    align-items: center;
+
+}
+.becados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.beca-boton{
+    align-self: start;
+}
+.beca-title {
+    text-align: left;
+}
+
+
+
+}
+
+ /* --- Audiciones --- */
+
+.portada-audiciones{
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+ .form-texto{
+    text-align: center;
+
+ }
+
+ .audicion-texto{
+    text-align: center;
+ }
+
+
+.audicion-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.form-title{
+    font-size: 2rem;
+    text-align: center;
+}
+ 
+ @media (min-width:768px){ 
+
+    .audiciones {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    
+        min-height: 80vh;
+    
+        align-items: center;
+    
+    }
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    
+    }
+    
+    .formulario-title {
+        text-align: center;
+    }
+    
+    }
+
+ /*   ---- Escuelas ----  */
+ .escuelas {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.escuelas-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+@media (min-width:768px){ 
+
+    .escuela.abt {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    
+        min-height: 80vh;
+    
+        align-items: center;
+    
+    }
+    .abt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    
+    }
+    
+    .escuelas-title {
+        text-align: left;
+    }
+    
+    }
+
+    @media (min-width:768px){ 
+
+        .escuela-rock {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        
+            min-height: 80vh;
+        
+            align-items: center;
+        
+        }
+        .rock {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+        
+        }
+        
+        
+        }
+
+        @media (min-width:768px){ 
+
+            .escuela-jacqueline {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            
+                min-height: 80vh;
+            
+                align-items: center;
+            
+            }
+            .jacqueline {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 1rem;
+            
+            }
+            
+    
+            
+            }
+
+
+
+
+
+ /*  ---- Sebastián Vinet ----  */
+
+ .sebastian {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.sebastian-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+@media (min-width:768px){ 
+
+.sebastian {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 80vh;
+
+    align-items: center;
+
+}
+.sebastianos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.sebastian-title {
+    text-align: left;
+}
+
+}
+
+
+
+/*  --- Footer --- */
+
+footer{
+    color: white;
+    font-weight: bold;
+    background-color: black;
+
+}
+
+.contactos{
+    text-align: center;
+
+}
+
+.rrss{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.btn{
+    color: white;
+}
