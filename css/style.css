@@ -1,36 +1,43 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-ul, ol{
+ul,
+ol {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
-  
-img{
-max-width: 100%;
-text-align: center;
+
+main div a {
+    color: goldenrod;
+    text-decoration: underline;
+
+}
+
+img {
+    max-width: 100%;
+    text-align: center;
 }
 
 
-body{
-    background-color:rgb(248, 239, 232);
+body {
+    background-color: rgb(248, 239, 232);
 }
 
-h2{
+h2 {
     color: goldenrod;
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
 }
 
-h3{ 
+h3 {
     font-size: 1rem;
     text-align: center;
 }
@@ -39,7 +46,7 @@ h3{
 /* --- Header --- */
 
 
-header{
+header {
     background-color: black;
     color: white;
     padding: 1rem;
@@ -54,30 +61,30 @@ header nav ul li a {
 }
 
 
-@media (min-width:480px){
-    header{
+@media (min-width:480px) {
+    header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 
-    .nav-list{
+    .nav-list {
         display: flex;
         gap: 1rem;
     }
 }
 
-   
+
 
 
 /*  --- Portada Index --- */
 
-.portada-index{
+.portada-index {
     padding: 1rem;
     height: 100vh;
     background-image: url(../img/pies\ bailarina\ de\ ballet.jpg);
     background-position: center;
-    background-size: cover;   
+    background-size: cover;
 
     display: flex;
     justify-content: center;
@@ -85,7 +92,7 @@ header nav ul li a {
     gap: 1rem;
 }
 
-.texto-portada{
+.texto-portada {
     display: flex;
     flex-direction: column;
     background-color: rgba(190, 186, 182, 0.945);
@@ -95,7 +102,7 @@ header nav ul li a {
     border-radius: 10px;
     border: 2px solid black;
 
-    
+
 }
 
 
@@ -110,12 +117,12 @@ header nav ul li a {
 
 }
 
-.beca-title{
+.beca-title {
     font-size: 2rem;
     text-align: center;
 }
 
-.beca-boton{
+.beca-boton {
     background-color: black;
     padding: 1rem 2rem;
     align-self: center;
@@ -123,217 +130,271 @@ header nav ul li a {
 
 }
 
-@media (min-width:768px){
+@media (min-width:768px) {
 
-.beca {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    .beca {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
 
-    min-height: 80vh;
+        min-height: 80vh;
 
-    align-items: center;
+        align-items: center;
+
+    }
+
+    .becados {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+    }
+
+    .beca-boton {
+        align-self: start;
+    }
+
+    .beca-title {
+        text-align: left;
+    }
+
+
 
 }
-.becados {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
 
-}
+/* --- Audiciones --- */
 
-.beca-boton{
-    align-self: start;
-}
-.beca-title {
-    text-align: left;
-}
-
-
-
-}
-
- /* --- Audiciones --- */
-
-.portada-audiciones{
+.portada-audiciones {
     padding: 1rem;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
 
 }
 
- .form-texto{
+.form-texto {
     text-align: center;
 
- }
+}
 
- .audicion-texto{
+.audicion-texto {
     text-align: center;
- }
+}
 
 
-.audicion-title{
+.audicion-title {
     font-size: 2rem;
     text-align: center;
 }
 
-.form-title{
+.form-title {
     font-size: 2rem;
     text-align: center;
 }
- 
- @media (min-width:768px){ 
+
+h3 {
+    text-align: start;
+
+}
+
+
+
+@media (min-width:768px) {
 
     .audiciones {
         display: grid;
         grid-template-columns: 1fr 1fr;
-    
+
         min-height: 80vh;
-    
+
         align-items: center;
-    
+
     }
+
     .formulario {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-    
+
     }
-    
+
     .formulario-title {
         text-align: center;
     }
-    
-    }
 
- /*   ---- Escuelas ----  */
- .escuelas {
+}
+
+/*   ---- Escuelas ----  */
+
+.portada-escuelas {
     padding: 1rem;
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.escuelas-title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.abt-title{
+    color: goldenrod;
+    font-size: 25px;
+}
+
+.rock-title{
+    color: goldenrod;
+    font-size: 25px;
+}
+
+.jacqueline-title{
+    color: goldenrod;
+    font-size: 25px;
+}
+
+
+.escuela-abt {
+    padding: 1rem;
     flex-direction: column;
     gap: 1rem;
 
 }
 
-.escuelas-title{
-    font-size: 2rem;
-    text-align: center;
+.escuela-rock {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.escuela-jacqueline{
+
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 
-@media (min-width:768px){ 
+@media (min-width:768px) {
 
-    .escuela.abt {
+
+    .portada-escuelas{
+        
+        gap: 1rem;
+    }
+
+    .escuelas-title {
+        text-align: left;
+    }
+
+
+    .escuela-abt {
+ 
+        min-height: 80vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
-    
-        min-height: 80vh;
-    
+
         align-items: center;
-    
+
     }
-    .abt {
+
+    .abt-texto {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-    
-    }
-    
-    .escuelas-title {
-        text-align: left;
-    }
-    
+
     }
 
-    @media (min-width:768px){ 
-
-        .escuela-rock {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        
-            min-height: 80vh;
-        
-            align-items: center;
-        
-        }
-        .rock {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 1rem;
-        
-        }
-        
-        
-        }
-
-        @media (min-width:768px){ 
-
-            .escuela-jacqueline {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-            
-                min-height: 80vh;
-            
-                align-items: center;
-            
-            }
-            .jacqueline {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 1rem;
-            
-            }
-            
     
-            
-            }
+
+
+    .escuela-rock {
+
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+
+        align-items: center;
+
+    }
+
+    .rock-texto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+
+
+
+    .escuela-jacqueline {
+
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        align-items: center;
+
+    }
+
+    .jacqueline-texto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+
+
+}
 
 
 
 
 
- /*  ---- Sebastián Vinet ----  */
+/*  ---- Sebastián Vinet ----  */
 
- .sebastian {
+.sebastian {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-
-}
-
-.sebastian-title{
-    font-size: 2rem;
-    text-align: center;
-}
-
-
-@media (min-width:768px){ 
-
-.sebastian {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    min-height: 80vh;
-
-    align-items: center;
-
-}
-.sebastianos {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     gap: 1rem;
 
 }
 
 .sebastian-title {
-    text-align: left;
+    font-size: 2rem;
+    text-align: center;
 }
+
+
+@media (min-width:768px) {
+
+    .sebastian {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        min-height: 80vh;
+
+        align-items: center;
+
+    }
+
+    .sebastianos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+
+    .sebastian-title {
+        text-align: left;
+    }
 
 }
 
@@ -341,19 +402,19 @@ header nav ul li a {
 
 /*  --- Footer --- */
 
-footer{
+footer {
     color: white;
     font-weight: bold;
     background-color: black;
 
 }
 
-.contactos{
+.contactos {
     text-align: center;
 
 }
 
-.rrss{
+.rrss {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -362,6 +423,6 @@ footer{
     padding: 1rem;
 }
 
-.btn{
+.btn {
     color: white;
 }
