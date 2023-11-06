@@ -46,7 +46,8 @@ h3 {
 /* --- Header --- */
 
 
-header {
+
+header{
     background-color: black;
     color: white;
     padding: 1rem;
@@ -54,9 +55,12 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header nav ul li a {
+    background-color: black;
     color: white;
 }
 
@@ -81,7 +85,7 @@ header nav ul li a {
 
 .portada-index {
     padding: 1rem;
-    height: 80vh;
+    height: 100vh;
     background-image: url(../img/pies\ bailarina\ de\ ballet.jpg);
     background-position: center;
     background-size: cover;
@@ -207,7 +211,11 @@ h3 {
     align-content: center;
 }
 
-
+.boton {
+    background-color: black;
+    color: white;
+    border-radius: solid 2px black;
+}
 @media (min-width:768px) {
 
     .portada-audiciones {
@@ -454,4 +462,5 @@ footer {
 
 .btn {
     color: white;
+
 }

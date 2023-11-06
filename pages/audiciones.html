@@ -88,10 +88,12 @@
 
             <section class="formulario">
 
-                <form action="form">
+               
 
 
                     <h2 class="formulario-title">Formulario de inscripción</h2>
+
+                    <form action="">
 
                     <div class="form-texto">
 
@@ -113,6 +115,11 @@
                         </div>
 
                         <div>
+                            <label for="mail">Correo electrónico</label>
+                            <input type="email" id="mail" placeholder="email@email.com">
+                        </div>
+
+                        <div>
                             <label for="peso">Peso</label>
                             <input type="weight" id="peso" placeholder="Peso (kg)">
 
@@ -123,19 +130,25 @@
                             <input type="height" id="estatura" placeholder="Estatura (cm)">
 
                         </div>
+                     
+                        <div>
+                            <label for="lugar de estudios">Lugar de estudios</label>
+                            <input type="lugar" id="lugar" placeholder="Nombre de escuela o maestro">
 
-                        <div>
-                            <label for="mail">Correo electrónico</label>
-                            <input type="email" id="mail" placeholder="email@email.com">
-                        </div>
-                        <!-- futuro adjuntar video -->
-                        <div>
-                            <label for="video">Adjuntar foto cuerpo entero</label>
-                            <input type="submit" value="Adjuntar" id="video">
                         </div>
 
                         <div>
-                            <input type="submit" value="Enviar">
+                            <label for="años de estudios">Años estudiando ballet</label>
+                            <input type="años" id="años" placeholder="Ingresa cantidad de años">
+                        </div>
+
+                        <div>
+                            <label for="foto">Adjuntar foto cuerpo entero</label>
+                            <input type="submit" value="Adjuntar" class="boton">
+                        </div>
+
+                        <div>
+                            <input type="submit" value="Enviar" class="boton">
                         </div>
 
                     </div>
