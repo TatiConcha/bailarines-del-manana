@@ -1,0 +1,30 @@
+
+header{
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    nav ul li a {
+        background-color: black;
+        color: white;
+    }
+
+
+    @include mq-sm{
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-list {
+        display: flex;
+        gap: 1rem;
+    }
+}

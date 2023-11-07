@@ -1,0 +1,64 @@
+
+$color-goldenrod:goldenrod;
+$color-white: white;
+$color-black: black;
+$ff-poppins: 'Poppins', sans-serif;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $ff-poppins;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+main div a {
+    color: $color-goldenrod;
+    text-decoration: underline;
+
+}
+
+img {
+    max-width: 100%;
+    text-align: center;
+}
+
+
+body {
+    background-color: rgb(248, 239, 232);
+}
+
+h2 {
+    color: $color-goldenrod;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+@mixin mq-sm{
+    @media (min-width: 480px){
+     @content;
+    }
+   
+}
+
+@mixin mq-md{
+    @media (min-width:768px){
+        @content;
+        
+    }
+}

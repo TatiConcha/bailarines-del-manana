@@ -1,0 +1,27 @@
+footer {
+    color: white;
+    font-weight: bold;
+    background-color: black;
+
+
+    .contactos {
+        text-align: center;
+    
+    }
+    
+    .rrss {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .btn {
+        color: white;
+    
+    }
+    
+}
+

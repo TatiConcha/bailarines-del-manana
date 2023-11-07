@@ -1,0 +1,89 @@
+.portada-audiciones {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+
+}
+
+.form-texto {
+    text-align: center;
+
+}
+
+.audicion-texto {
+    text-align: center;
+}
+
+
+.audicion-title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3 {
+    text-align: start;
+
+}
+
+.audicion-texto {
+    text-align: start;
+}
+
+.form-texto {
+    text-align: start;
+    align-content: center;
+}
+
+.boton {
+    background-color: $color-black;
+    color: color-white;
+    border-radius: solid 2px $color-black;
+}
+
+
+@include mq-md {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    &-title {
+        text-align: center;
+    }
+
+}
+
+@include mq-md {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    align-items: center;
+}
+
+@include mq-md {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+@include mq-md {
+
+    text-align: start;
+}
