@@ -19,34 +19,3 @@
 
 }
 
-@media (min-width:768px) {
-
-    .beca {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        min-height: 80vh;
-
-        align-items: center;
-
-    }
-
-    .becados {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 1rem;
-
-    }
-
-    .beca-boton {
-        align-self: start;
-    }
-
-    .beca-title {
-        text-align: left;
-    }
-
-
-
-}

@@ -4,36 +4,32 @@
     flex-direction: column;
     gap: 1rem;
 
-}
-
-.sebastian-title {
-    font-size: 2rem;
-    text-align: center;
-}
-
-
-@media (min-width:768px) {
-
-    .sebastian {
+    @include mq-tablet{
         display: grid;
         grid-template-columns: 1fr 1fr;
 
         min-height: 80vh;
 
         align-items: center;
-
     }
+}
 
-    .sebastianos {
+.contenedor-title {
+    font-size: 2rem;
+    text-align: center;
+
+    @include mq-tablet{
+        text-align: left;
+    }
+}
+
+.sebastian-contenedor{
+    @include mq-tablet{
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-
+ 
     }
-
-    .sebastian-title {
-        text-align: left;
-    }
-
 }
+

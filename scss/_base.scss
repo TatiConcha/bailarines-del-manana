@@ -1,5 +1,4 @@
-
-$color-goldenrod:goldenrod;
+$color-goldenrod: goldenrod;
 $color-white: white;
 $color-black: black;
 $ff-poppins: 'Poppins', sans-serif;
@@ -49,16 +48,29 @@ h3 {
     text-align: center;
 }
 
-@mixin mq-sm{
-    @media (min-width: 480px){
-     @content;
+main button a {
+    color: black;
+    background-color: rgb(238, 162, 70);
+    text-align: center;
+    border-radius: 10px;
+    padding: 1rem;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+background-color: bisque;
     }
-   
 }
 
-@mixin mq-md{
-    @media (min-width:768px){
+@mixin mq-tablet {
+    @media (min-width:768px) {
         @content;
-        
+
+    }
+}
+
+@mixin mq-desktop {
+    @media (min-width: 1024px) {
+        @content;
     }
 }
