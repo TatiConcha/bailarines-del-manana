@@ -1,28 +1,27 @@
-.portada-audiciones {
+.audiciones-contenedor {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 
-
+    @include mq-tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 80vh;
+        align-items: center;
+    }
+    
 }
 
-.form-texto {
-    text-align: center;
 
-}
 
 .audicion-texto {
-    text-align: center;
+    text-align: start;
+    align-content: center;
 }
 
 
 .audicion-title {
-    font-size: 2rem;
-    text-align: center;
-}
-
-.form-title {
     font-size: 2rem;
     text-align: center;
 }
@@ -32,20 +31,77 @@ h3 {
 
 }
 
-.audicion-texto {
-    text-align: start;
+.form-title {
+    font-size: 2rem;
+    text-align: center;
+
+  
 }
+
 
 .form-texto {
     text-align: start;
     align-content: center;
 }
 
-.boton {
-    background-color: $color-black;
-    color: color-white;
-    border-radius: solid 2px $color-black;
+
+
+
+
+
+.audiciones {
+    @include mq-tablet {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    
+    
+        &-title {
+            text-align: center;
+        }
+    
+    }
+}
+
+.form {
+    @include mq-tablet {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    
+    
+        &-title {
+            text-align: start;
+        }
+    
+    }
 }
 
 
-    
+.form-btn {
+    color: black;
+    background-color: rgb(238, 162, 70);
+    text-align: center;
+    border-radius: .5rem;
+    padding: .5rem;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+background-color: bisque;
+    }
+}
+
+
+
+

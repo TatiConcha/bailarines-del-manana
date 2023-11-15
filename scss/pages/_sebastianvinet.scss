@@ -14,13 +14,11 @@
     }
 }
 
-.contenedor-title {
+.sebastin-title {
     font-size: 2rem;
     text-align: center;
 
-    @include mq-tablet{
-        text-align: left;
-    }
+    
 }
 
 .sebastian-contenedor{

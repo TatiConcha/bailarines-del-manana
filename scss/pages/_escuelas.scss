@@ -1,4 +1,4 @@
-.portada-escuelas {
+.escuela {
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -48,3 +48,73 @@
     gap: 1rem;
 }
 
+
+@media (min-width:768px) {
+
+
+    .escuela{
+        
+        gap: 1rem;
+    }
+
+    .escuelas-title {
+        text-align: left;
+    }
+
+
+    .escuela-abt {
+ 
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        align-items: center;
+
+    }
+
+    .abt-texto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+
+
+    .escuela-rock {
+
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+
+        align-items: center;
+
+    }
+
+    .rock-texto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+
+    .escuela-jacqueline {
+
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        align-items: center;
+
+    }
+
+    .jacqueline-texto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+
+  }

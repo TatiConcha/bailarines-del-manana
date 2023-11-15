@@ -15,4 +15,20 @@ header{
         color: white;
     }
 
+
+    @include mq-tablet{
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-list {
+        display: flex;
+        gap: 1rem;
+    } 
+    
 }
+
+
+
