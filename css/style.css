@@ -40,7 +40,7 @@ h3 {
   text-align: center;
 }
 
-main button a {
+.boton {
   color: black;
   background-color: rgba(238, 162, 70, 0.521);
   text-align: center;
@@ -49,7 +49,7 @@ main button a {
   display: inline-block;
   text-decoration: none;
 }
-main button a:hover {
+.boton:hover {
   background-color: bisque;
 }
 
@@ -317,7 +317,7 @@ h3 {
 .texto-portada {
   display: flex;
   flex-direction: column;
-  background-color: rgba(190, 186, 182, 0.945);
+  background-color: rgba(235, 231, 222, 0.514);
   text-align: center;
   padding: 3rem;
   gap: 16px;
