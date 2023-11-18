@@ -67,8 +67,11 @@ footer {
   height: 30px;
   width: 30px;
 }
-.rrss:hover {
-  transform: scale(1, 1);
+.rrss-ig:hover {
+  transform: scale(1.1);
+}
+.rrss-youtube:hover {
+  transform: scale(1.2);
 }
 
 header {
@@ -211,6 +214,9 @@ h3 {
     justify-content: center;
     gap: 1rem;
   }
+  .beca-contenedor-boton {
+    align-items: left;
+  }
 }
 
 .escuela {
@@ -328,7 +334,7 @@ h3 {
 }
 .texto-portada .titulo-portada {
   text-align: center;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
 }
 
@@ -358,6 +364,9 @@ h3 {
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+  }
+  .sebastian-contenedor-boton {
+    align-items: left;
   }
 }
 

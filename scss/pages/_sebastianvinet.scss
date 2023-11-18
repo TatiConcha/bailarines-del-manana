@@ -27,6 +27,11 @@
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
+
+        &-boton{
+            align-items: left;
+        }
+
  
     }
 }
