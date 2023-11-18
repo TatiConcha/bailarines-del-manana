@@ -1,38 +1,40 @@
 .sebastian {
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    text-align: left;
 
-    @include mq-tablet{
+    &-boton {
+        align-self: center;
+    }
+
+    .sebastin-title {
+        font-size: 2rem;
+        text-align: center;
+        padding: 2rem;
+
+
+    }
+
+    @include mq-tablet {
         display: grid;
         grid-template-columns: 1fr 1fr;
 
-        min-height: 80vh;
 
-        align-items: center;
-    }
-}
-
-.sebastin-title {
-    font-size: 2rem;
-    text-align: center;
-
-    
-}
-
-.sebastian-contenedor{
-    @include mq-tablet{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1rem;
-
-        &-boton{
-            align-items: left;
+        &-contenedor {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
         }
 
- 
-    }
-}
+        &-boton {
+            align-self: start;
 
+        }
+
+
+    }
+
+}

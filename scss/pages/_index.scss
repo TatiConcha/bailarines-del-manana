@@ -12,24 +12,28 @@
 }
 
 .texto-portada {
- 
-
+    display: flex;
     flex-direction: column;
-    margin: auto;
     background-color: rgba(235, 231, 222, 0.514);
-    text-align: left;
+    text-align: center;
     padding: 1rem;
     gap: 16px;
     border-radius: 10px;
     border: 2px solid $color-black;
+
+ 
+    @include mq-tablet{
+
+    margin: auto;  
+    text-align: left;
     position: absolute;
     width: 70vh;
-    
+}
     
 .titulo-portada {
     text-align: center;
     -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: $color-black
    
 }
 
