@@ -13,7 +13,7 @@ export default function CreatorSection() {
           {/* Imagen */}
           <div className="order-2 md:order-1">
             <img
-              src="/images/sebastian_vinet_placeholder.jpg"
+              src="/images/sebastianvinetclases"
               alt="Sebastián Vinet, bailarín y creador"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500"
             />
@@ -38,7 +38,7 @@ export default function CreatorSection() {
                   Formación
                 </p>
                 <p className="text-sm font-lato text-gray-600">
-                  Escuela de Ballet del Teatro Municipal de Santiago, Houston Ballet Academy
+                  Escuela de Ballet del Teatro Municipal de Santiago, Houston Ballet Academy.
                 </p>
               </div>
 
@@ -47,7 +47,7 @@ export default function CreatorSection() {
                   Experiencia
                 </p>
                 <p className="text-sm font-lato text-gray-600">
-                  Maestro invitado en ABT, Hong Kong Ballet, Les Ballet de Monte Carlo
+                  Ex bailarín Andrea Bocelli USA Tour, Houston Ballet, San Francisco Ballet, Ballet de Santiago y Compañía Nacional de Danza. Maestro invitado en ABT, Hong Kong Ballet, Les Ballet de Monte Carlo.
                 </p>
               </div>
 
@@ -56,7 +56,7 @@ export default function CreatorSection() {
                   Rol Actual
                 </p>
                 <p className="text-sm font-lato text-gray-600">
-                  Jurado en YAGP, Prix de Lausanne y creador de Bailarines del Mañana
+                  Maestro internacional invitado y maestro permanente para Les Ballet de Monte Carlo, American Ballet Theatre, San Francisco Ballet, Academie Princesse Grace. Jurado Youth America Grand Prix USA (YAGP) y Prix de Lausanne. 
                 </p>
               </div>
             </div>
