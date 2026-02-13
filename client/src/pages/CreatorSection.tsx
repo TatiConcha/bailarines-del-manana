@@ -13,7 +13,7 @@ export default function CreatorSection() {
           {/* Imagen */}
           <div className="order-2 md:order-1">
             <img
-              src="/images/sebastianvinetclases"
+              src="/images/sebastianvinetclases.jpg"
               alt="Sebastián Vinet, bailarín y creador"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500"
             />
