@@ -13,55 +13,61 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "¿Cuál es el rango de edad para participar?",
+      question: "¿Cuál es el rango de edad para participar de la AUDICIÓN?",
       answer:
-        "Los participantes deben tener entre 13 y 19 años al momento de la audición. Esta edad es fundamental para que los bailarines puedan beneficiarse plenamente de los programas de formación ofrecidos por las escuelas internacionales.",
+        "Los participantes deben tener entre 12 y 15 años para la categoría JUNIOR y entre 16 y 18 años para la categoría SENIOR al momento de la audición. Esta edad es fundamental para que los bailarines puedan beneficiarse plenamente de los programas de formación ofrecidos por las escuelas internacionales.",
     },
     {
-      question: "¿Cuál es el costo de inscripción?",
+      question: "¿Cuál es el costo de inscripción a la AUDICIÓN en CHILE?",
       answer:
-        "El costo de inscripción es de $30,000 CLP (aproximadamente USD $35). Este monto cubre la evaluación de tu solicitud y la participación en las audiciones presenciales.",
+        "El costo de inscripción a la audición es de $40.000 CLP y el costo de inscripción a la audición más la clase magistral es de $55.000 CLP. Este monto cubre la evaluación de tu solicitud y la participación en las audiciones presenciales.",
     },
     {
-      question: "¿Dónde se realizan las audiciones?",
+      question: "¿Dónde y cuándo se realizan las AUDICIONES?",
       answer:
-        "Las audiciones se realizan en diferentes ciudades de Chile. Generalmente se llevan a cabo en Santiago, pero también en otras ciudades según la demanda. Las fechas y ubicaciones exactas se anuncian con anticipación en nuestro sitio web.",
+        "Las audiciones se realizan el 11 de abril 2026 en la Escuela de Ballet Andrea Aedo (Avenida Concón Reñaca 41, local 27) en Concón, Valparaíso y el 12 de abril 2026 en la Escuela Royal Dance Chile (Diego de Almagro 5326, metro Principe de Gales) en Ñuñoa, Santiago.",
     },
-    {
-      question: "¿Qué documentos necesito para inscribirme?",
-      answer:
-        "Necesitarás: una foto en posición de ballet (en quinta posición), un video de máximo 3 minutos mostrando tu técnica, información personal completa y comprobante de pago de la inscripción.",
-    },
-    {
+
+{
       question: "¿Cuánto cubre la beca?",
       answer:
-        "Las becas varían según la escuela y el programa. Algunas cubren el 100% de la matrícula, mientras que otras cubren un porcentaje. Algunas becas también incluyen hospedaje y otros gastos. Los detalles específicos se proporcionan después de ser seleccionado.",
+        "Las becas solo cubren la COLEGIATURA de los cursos de verano, no cubren pasaje, visas, hospedaje, a menos que este especificado.",
     },
-    {
-      question: "¿Puedo participar si no tengo experiencia profesional?",
+
+{
+      question: "¿Puedo audicionar sin experiencia profesional?",
       answer:
-        "Sí, puedes participar si estás estudiando ballet en una escuela reconocida. Lo importante es demostrar tu pasión, disciplina y potencial. No es necesario tener experiencia profesional previa.",
+        "Sí, puedes audicionar si tienes el conocimiento básico de la técnica clásica y contemporánea universal. No es necesario tener experiencia profesional previa.",
     },
-    {
-      question: "¿Cuál es el proceso de selección?",
-      answer:
-        "El proceso consta de dos fases: primero, se revisan las solicitudes digitales (fotos y videos). Los preseleccionados son invitados a audiciones presenciales donde demuestran su técnica ante un jurado de expertos internacionales.",
-    },
-    {
-      question: "¿Puedo participar desde el extranjero?",
-      answer:
-        "Sí, puedes participar desde cualquier país. Sin embargo, si eres preseleccionado, deberás viajar a Chile para las audiciones presenciales. Algunas escuelas ofrecen audiciones virtuales en casos especiales.",
-    },
-    {
-      question: "¿Cuándo son las próximas audiciones?",
-      answer:
-        "Las audiciones se realizan anualmente. Las fechas exactas se anuncian con varios meses de anticipación. Te recomendamos seguir nuestras redes sociales para estar actualizado.",
-    },
+
     {
       question: "¿Qué pasa después de ganar una beca?",
       answer:
-        "Después de ganar, trabajaremos contigo para coordinar tu viaje, trámites de visa (si es necesario) y tu llegada a la escuela. También te proporcionaremos apoyo durante tu estadía para asegurar una experiencia exitosa.",
+        "Después de ganar, trabajaremos contigo para que te comuniques directo con la escuela correspondiente quienes te asesorarán  en como acceder a tu beca para el curso de verano.",
     },
+
+    {
+      question: "¿Cuál es el rango de edad para participar de la CLASE MAGISTRAL?",
+      answer:
+        "No hay rango de edad.",
+    },
+    
+    {
+      question: "¿Cuál es el costo de inscripción a la CLASE MAGISTRAL en CHILE?",
+      answer:
+        "El costo de inscripción a la clase magistral es de $25.000 CLP.",
+    },
+    {
+      question: "¿Dónde y cuándo se realizan las CLASES MAGISTRALES?",
+      answer:
+        "Las audiciones se realizan el 11 de abril 2026 en la Escuela de Ballet Andrea Aedo (Avenida Concón Reñaca 41, local 27) en Concón, Valparaíso y el 12 de abril 2026 en la Escuela Royal Dance Chile (Diego de Almagro 5326, metro Principe de Gales) en Ñuñoa, Santiago.",
+    },
+    {
+      question: "¿Puedo audicionar sin experiencia profesional?",
+      answer:
+        "sÍ, Lo importante es demostrar tu pasión, disciplina y potencial. No es necesario tener experiencia profesional previa.",
+    },
+    
   ];
 
   const toggleFAQ = (index: number) => {
@@ -75,7 +81,7 @@ export default function FAQSection() {
           Preguntas Frecuentes
         </h2>
         <p className="text-lg font-lato text-gray-600 text-center mb-16">
-          Respuestas a las dudas más comunes sobre nuestro programa de becas
+          Respuestas a las dudas más comunes sobre nuestro programa de becas y clases magistrales
         </p>
 
         <div className="space-y-4">
@@ -119,7 +125,7 @@ export default function FAQSection() {
             Contáctanos directamente para obtener más información
           </p>
           <a
-            href="mailto:info@bailarinesdelmanana.com"
+            href="mailto:info@sebastianvinet.com"
             className="inline-block text-lg font-cormorant font-bold text-gray-900 hover:text-gray-600 transition-colors duration-300 relative group"
           >
             info@bailarinesdelmanana.com
