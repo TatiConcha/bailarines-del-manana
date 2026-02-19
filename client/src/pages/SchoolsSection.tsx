@@ -8,40 +8,49 @@
 export default function SchoolsSection() {
   const schools = [
     {
-      name: "Boston Ballet",
+      name: "Houston Ballet Academy",
       country: "Estados Unidos",
-      city: "Boston, Massachusetts",
+      city: "Houston, Texas",
       description:
-        "Una de las compañías de ballet más prestigiosas de América del Norte, conocida por su excelencia técnica y su compromiso con la innovación artística.",
+        "Desde su fundación en 1955, Houston Ballet Academy ha brindado la más alta calidad de formación en ballet a bailarines aspirantes. Durante el verano, los estudiantes recibirán una formación que enriquecerá y complementará su educación previa en danza.",
       image: "/images/ballet_school_1.jpg",
-      programs: ["Cursos de verano", "Residencias", "Programas anuales"],
+      program: ["Curso intensivo de verano 2026"],
     },
     {
-      name: "Escuela Superior de Música y Danza de Monterrey",
-      country: "México",
-      city: "Monterrey",
+      name: "International Ballet Academy",
+      country: "Estados Unidos",
+      city: "Cary, Carolina del Norte",
       description:
-        "Institución de excelencia en la formación de bailarines, con un enfoque en la técnica clásica y la expresión artística contemporánea.",
+        "IBA ofrece un programa intensivo de verano, diseñado para estudiantes que se encuentren en un nivel intermedio o superior. El objetivo es brindar oportunidades para que el bailarín crezca tanto a nivel técnico como artístico.",
       image: "/images/ballet_school_2.jpg",
-      programs: ["Cursos de verano", "Residencias", "Becas integrales"],
+      program: ["Curso intensivo de verano 2026"],
     },
     {
-      name: "Melbourne Academy of the Arts",
-      country: "Australia",
-      city: "Melbourne",
+      name: "New Jersey Ballet",
+      country: "Estados Unidos",
+      city: "New Jersey",
       description:
-        "Centro de formación de clase mundial que combina la tradición del ballet clásico con técnicas modernas y contemporáneas.",
+        "El curso intensivo de verano está dirigido a estudiantes de ballet comprometidos, que sienten una verdadera pasión por la danza y están preparados para alcanzar un nuevo nivel de excelencia artística. Los estudiantes entrenarán en nuestras instalaciones de última generación bajo la guía de un distinguido equipo docente que incluirá maestros invitados de reconocimiento internacional.",
       image: "/images/ballet_school_1.jpg",
-      programs: ["Cursos de verano", "Residencias", "Programas especializados"],
+      program: ["Curso intensivo de verano 2026"],
     },
     {
-      name: "Lizt Alfonso Dance Cuba",
-      country: "Cuba",
-      city: "La Habana",
+      name: "Rock School for Dance Education",
+      country: "Estados Unidos",
+      city: "Filadelfia, Pensilvania",
       description:
-        "Escuela de danza de renombre internacional que mantiene la tradición del ballet cubano y ofrece formación de nivel superior.",
+        "El curso intensivo de verano 2026 de The Rock School ofrece atención personalizada por parte de un galardonado equipo docente en instalaciones de última generación.",
       image: "/images/ballet_school_2.jpg",
-      programs: ["Cursos de verano", "Residencias", "Intercambios culturales"],
+      program: ["Curso intensivo de verano 2026"],
+    },
+ {
+      name: "Westchester Ballet Company,",
+      country: "Estados Unidos",
+      city: "Ossining, Nueva York",
+      description:
+        "Nuestras clases fortalecen el cuerpo y la confianza. Y nuestros programas continúan abriendo nuevos caminos donde antes no los había.",
+      image: "/images/ballet_school_2.jpg",
+      program: ["Curso intensivo de verano 2026"],
     },
   ];
 
@@ -49,7 +58,7 @@ export default function SchoolsSection() {
     <section id="escuelas" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Escuelas Participantes
+          Escuelas Partners Chile 2026
         </h2>
         <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Instituciones de prestigio internacional que ofrecen becas a través de nuestro programa
@@ -90,7 +99,7 @@ export default function SchoolsSection() {
 
                 <div>
                   <h4 className="text-sm font-cormorant font-bold text-gray-900 mb-4 uppercase tracking-widest">
-                    Programas Disponibles
+                    Programa Disponible
                   </h4>
                   <ul className="space-y-3">
                     {school.programs.map((program, pidx) => (

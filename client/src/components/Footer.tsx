@@ -64,7 +64,7 @@ export default function Footer() {
               Contacto
             </h4>
             <p className="text-sm font-lato text-gray-600 mb-2">
-              Email: info@bailarinesdelmanana.com
+              Email: info@sebastianvinet.com
             </p>
             <p className="text-sm font-lato text-gray-600">
               Síguenos en redes sociales

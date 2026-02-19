@@ -20,7 +20,7 @@ export default function FAQSection() {
     {
       question: "¿Cuál es el costo de inscripción a la AUDICIÓN en CHILE?",
       answer:
-        "El costo de inscripción a la audición es de $40.000 CLP y el costo de inscripción a la audición más la clase magistral es de $55.000 CLP. Este monto cubre la evaluación de tu solicitud y la participación en las audiciones presenciales.",
+        "El costo de inscripción a la audición es de $40.000 CLP y el costo de inscripción a la audición más la clase magistral es de $55.000 CLP.  Este monto cubre la evaluación de tu solicitud y la participación en las audiciones presenciales.",
     },
     {
       question: "¿Dónde y cuándo se realizan las AUDICIONES?",
@@ -31,7 +31,7 @@ export default function FAQSection() {
 {
       question: "¿Cuánto cubre la beca?",
       answer:
-        "Las becas solo cubren la COLEGIATURA de los cursos de verano, no cubren pasaje, visas, hospedaje, a menos que este especificado.",
+        "Las becas solo cubren la COLEGIATURA de los cursos de verano, no cubren pasaje, visas, hospedaje, a menos que esté especificado.",
     },
 
 {
@@ -43,7 +43,7 @@ export default function FAQSection() {
     {
       question: "¿Qué pasa después de ganar una beca?",
       answer:
-        "Después de ganar, trabajaremos contigo para que te comuniques directo con la escuela correspondiente quienes te asesorarán  en como acceder a tu beca para el curso de verano.",
+        "Después de ganar, trabajaremos contigo para que te comuniques directo con la escuela correspondiente quienes te asesorarán  en cómo acceder a tu beca para el curso de verano.",
     },
 
     {
@@ -63,9 +63,9 @@ export default function FAQSection() {
         "Las audiciones se realizan el 11 de abril 2026 en la Escuela de Ballet Andrea Aedo (Avenida Concón Reñaca 41, local 27) en Concón, Valparaíso y el 12 de abril 2026 en la Escuela Royal Dance Chile (Diego de Almagro 5326, metro Principe de Gales) en Ñuñoa, Santiago.",
     },
     {
-      question: "¿Puedo audicionar sin experiencia profesional?",
+      question: "¿Puedo participar de la CLASE MAGISTRAL sin experiencia profesional?",
       answer:
-        "sÍ, Lo importante es demostrar tu pasión, disciplina y potencial. No es necesario tener experiencia profesional previa.",
+        "Sí, Lo importante es demostrar tu pasión, disciplina y potencial. No es necesario tener experiencia profesional previa.",
     },
     
   ];
@@ -128,7 +128,7 @@ export default function FAQSection() {
             href="mailto:info@sebastianvinet.com"
             className="inline-block text-lg font-cormorant font-bold text-gray-900 hover:text-gray-600 transition-colors duration-300 relative group"
           >
-            info@bailarinesdelmanana.com
+            info@sebastianvinet.com
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
           </a>
         </div>
