@@ -102,7 +102,7 @@ export default function SchoolsSection() {
                     Programa Disponible
                   </h4>
                   <ul className="space-y-3">
-                    {school.programs.map((program, pidx) => (
+                    {school.program.map((program, pidx) => (
                       <li
                         key={pidx}
                         className="flex items-center gap-3 text-sm font-lato text-gray-700"
