@@ -9,46 +9,44 @@ export default function WinnersSection() {
   const winners = [
     {
       year: 2024,
-      title: "Ganadores 2024",
+      title: "Estudiantes beneficiarios de una beca 2024",
       description:
-        "En la edición 2024, se otorgaron becas a través de 9 escuelas internacionales de prestigio.",
-      highlights: [
-        {
-          name: "Emilia Mancilla",
-          school: "Escuela Superior de Música y Danza de Monterrey",
-          country: "México",
-          award: "Beca 100%",
-        },
+        "En la edición 2024, se otorgaron becas a través de 9 escuelas internacionales de prestigio, las cuales fueron entregadas tanto en Chile como en Perú.",
+    
+      chile: [
+        "Eloísa Quevedo, Melbourne Academy of the Arts, Australia",
+        "Emilia Mansilla, La Superior, México",
+        "Javiera Concha, Lizt Alfonso Dance, Cuba",
+        "Josefa Almaraz, North County Academy of Dance, Estados Unidos",
+        "Manuel Espinoza, Ballet West, Estados Unidos",
+        "María Gutiérrez, Boston Ballet, Estados Unidos",
+        "Renata Silva, Cary Ballet Conservatory, Estados Unidos",
+        "Tatiana Duque, Nashville Classical Ballet Academy, Estados Unidos",
+        "Valentina Estévez, Cary Ballet Conservatory, Estados Unidos",
       ],
-      schools: [
-        "Melbourne Academy of the Arts (Australia)",
-        "Boston Ballet (EE.UU.)",
-        "Escuela Superior de Música y Danza de Monterrey (México)",
-        "Cary Ballet Conservatory (EE.UU.)",
-        "Nashville Classical Ballet Academy (EE.UU.)",
-        "North County Academy of Dance (EE.UU.)",
-        "Ballet West (EE.UU.)",
-        "Australian National Youth Ballet",
-        "Lizt Alfonso Dance Cuba (Cuba)",
+
+      peru: [
+        "Ariana Andrade, Melbourne Academy of the Arts, Australia",
+        "Bryana Rabines, Boston Ballet, Estados Unidos",
+        "Cristina Huerta, Cary Ballet Conservatory, Estados Unidos",
+        "Erika Ramírez, Lizt Alfonso Dance, Cuba",
+        "María Ibérico, North County Academy of Dance, Estados Unidos",
+        "Mayra Rosadio, La Superior, México",
+        "Valentino León, Ballet West, Estados Unidos",
+        "Yaiza Arteaga, Nashville Classical Ballet Academy, Estados Unidos",
       ],
+
     },
     {
       year: 2022,
-      title: "Ganadores 2022",
+      title: "Estudiantes beneficiarios de una beca 2022",
       description:
-        "La primera edición de Bailarines del Mañana reunió a talento joven en audiciones presenciales.",
-      highlights: [
-        {
-          name: "Múltiples ganadores",
-          school: "ABT JKO School, Jacqueline's School of Ballet, Rock School",
-          country: "EE.UU.",
-          award: "Becas de verano",
-        },
-      ],
-      schools: [
-        "ABT JKO School (Nueva York)",
-        "Jacqueline's School of Ballet (Salt Lake City)",
-        "Rock School for Dance Education (Filadelfia)",
+        "La primera edición de Bailarines del Mañana reunió a talento joven chileno en audiciones presenciales.",
+      
+      chile: [
+        "Eloísa Quevedo, Melbourne Academy of the Arts, Australia",
+        "Emilia Mansilla, La Superior, México",
+        "Javiera Concha, Lizt Alfonso Dance, Cuba",
       ],
     },
   ];
@@ -57,10 +55,10 @@ export default function WinnersSection() {
     <section id="ganadores" className="py-20 md:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Ganadores de Jornadas Anteriores
+          Estudiantes Beneficiarios de Jornadas Anteriores
         </h2>
         <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-          Conoce a los talentosos bailarines que han ganado becas internacionales a través de nuestro programa
+          Conoce a los talentosos bailarines que han sido beneficiarios con becas internacionales a través de nuestro programa
         </p>
 
         <div className="space-y-20">
@@ -81,52 +79,52 @@ export default function WinnersSection() {
 
               {/* Contenido */}
               <div className="p-8 md:p-12">
-                {/* Ganadores Destacados */}
-                <div className="mb-12">
-                  <h4 className="text-2xl font-cormorant font-bold text-gray-900 mb-6">
-                    Ganadores Destacados
-                  </h4>
-                  <div className="space-y-4">
-                    {winnerYear.highlights.map((winner, idx) => (
-                      <div
-                        key={idx}
-                        className="border-l-4 border-gray-400 pl-6 py-4"
-                      >
-                        <p className="text-lg font-cormorant font-bold text-gray-900">
-                          {winner.name}
-                        </p>
-                        <p className="text-sm font-lato text-gray-600 mb-2">
-                          {winner.school}
-                        </p>
-                        <p className="text-sm font-lato font-semibold text-gray-900">
-                          {winner.award}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+               
+                {/* Chile */}
+<div className="mb-12">
+  <h4 className="text-2xl font-cormorant font-bold text-gray-900 mb-6">
+    Chile
+  </h4>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {winnerYear.chile?.map((school, idx) => (
+      <div
+        key={idx}
+        className="flex items-start gap-3 p-4 bg-gray-50 rounded-sm"
+      >
+        <span className="text-gray-400 font-cormorant font-bold mt-1">
+          •
+        </span>
+        <p className="text-sm font-lato text-gray-700">
+          {school}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
 
-                {/* Escuelas Participantes */}
-                <div>
-                  <h4 className="text-2xl font-cormorant font-bold text-gray-900 mb-6">
-                    Escuelas Participantes
-                  </h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {winnerYear.schools.map((school, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-start gap-3 p-4 bg-gray-50 rounded-sm"
-                      >
-                        <span className="text-gray-400 font-cormorant font-bold mt-1">
-                          •
-                        </span>
-                        <p className="text-sm font-lato text-gray-700">
-                          {school}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+{/* Perú */}
+{winnerYear.peru && winnerYear.peru.length > 0 && (
+  <div>
+    <h4 className="text-2xl font-cormorant font-bold text-gray-900 mb-6">
+      Perú
+    </h4>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {winnerYear.peru.map((school, idx) => (
+      <div
+        key={idx}
+        className="flex items-start gap-3 p-4 bg-gray-50 rounded-sm"
+      >
+        <span className="text-gray-400 font-cormorant font-bold mt-1">
+          •
+        </span>
+        <p className="text-sm font-lato text-gray-700">
+          {school}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+)}
               </div>
             </div>
           ))}
