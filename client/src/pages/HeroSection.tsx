@@ -20,26 +20,34 @@ export default function HeroSection() {
         />
 
         {/* Overlay oscuro sutil */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
         {/* Contenido */}
         <div className="relative z-10 text-center text-white max-w-2xl px-6">
-          <h1 className="text-6xl md:text-7xl font-cormorant font-bold mb-6 leading-tight">
-            Bailarines del Mañana
+          <p className="text-sm uppercase tracking-widest mb-4">
+             Programa Internacional Bailarines del Mañana
+           </p>
+          <h1 className="text-5xl md:text-6xl font-cormorant font-bold mb-6 leading-tight">
+             Audición de Ballet 2026 para Becas en Estados Unidos
           </h1>
           <p className="text-xl md:text-2xl font-lato font-light mb-8 leading-relaxed">
-            Becas internacionales para jóvenes bailarines talentosos en las mejores escuelas del mundo
+             Audiciona para acceder a becas en prestigiosas escuelas de Estados Unidos y para participar de una clase magistral con Sebastián Vinet.
           </p>
+
           <a href="#inscripcion" className="inline-block">
             <Button
               size="lg"
               className="bg-white text-gray-900 hover:bg-gray-100 font-cormorant text-lg px-8 py-6 rounded-none border-2 border-white"
             >
-              Inscribirse Ahora
+              Inscríbete ahora
             </Button>
           </a>
+          {/* Microcopy de urgencia */}
+          <p className="text-sm mt-4 opacity-90">
+           Audición presencial en Chile • Cupos limitados • Convocatoria 2026
+          </p>
         </div>
-      </div>
+        </div>
     </section>
   );
 }
