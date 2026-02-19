@@ -25,7 +25,7 @@ export default function HeroSection() {
         {/* Contenido */}
         <div className="relative z-10 text-center text-white max-w-2xl px-6">
           <p className="text-sm uppercase tracking-widest mb-4">
-             Programa Internacional Bailarines del Mañana
+              Bailarines del Mañana · Programa Internacional
            </p>
           <h1 className="text-5xl md:text-6xl font-cormorant font-bold mb-6 leading-tight">
              Audición de Ballet 2026 para Becas en Estados Unidos
@@ -44,7 +44,7 @@ export default function HeroSection() {
           </a>
           {/* Microcopy de urgencia */}
           <p className="text-sm mt-4 opacity-90">
-           Audición presencial en Chile • Cupos limitados • Convocatoria 2026
+           Audición presencial en Chile (abril) y en Perú (agosto)• Cupos limitados • Convocatoria 2026
           </p>
         </div>
         </div>

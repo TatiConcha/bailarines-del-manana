@@ -9,48 +9,48 @@ export default function SchoolsSection() {
   const schools = [
     {
       name: "Houston Ballet Academy",
-      country: "Estados Unidos",
-      city: "Houston, Texas",
+      country: "Chile y Perú",
+      city: "Texas, Estados Unidos",
       description:
         "Desde su fundación en 1955, Houston Ballet Academy ha brindado la más alta calidad de formación en ballet a bailarines aspirantes. Durante el verano, los estudiantes recibirán una formación que enriquecerá y complementará su educación previa en danza.",
       image: "/images/ballet_school_1.jpg",
-      program: ["Curso intensivo de verano 2026"],
+      program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
     {
       name: "International Ballet Academy",
-      country: "Estados Unidos",
-      city: "Cary, Carolina del Norte",
+      country: "Chile y Perú",
+      city: "Carolina del Norte, Estados Unidos",
       description:
         "IBA ofrece un programa intensivo de verano, diseñado para estudiantes que se encuentren en un nivel intermedio o superior. El objetivo es brindar oportunidades para que el bailarín crezca tanto a nivel técnico como artístico.",
       image: "/images/ballet_school_2.jpg",
-      program: ["Curso intensivo de verano 2026"],
+      program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
     {
       name: "New Jersey Ballet",
-      country: "Estados Unidos",
-      city: "New Jersey",
+      country: "Chile y Perú",
+      city: "New Jersey, Estados Unidos",
       description:
         "El curso intensivo de verano está dirigido a estudiantes de ballet comprometidos, que sienten una verdadera pasión por la danza y están preparados para alcanzar un nuevo nivel de excelencia artística. Los estudiantes entrenarán en nuestras instalaciones de última generación bajo la guía de un distinguido equipo docente que incluirá maestros invitados de reconocimiento internacional.",
       image: "/images/ballet_school_1.jpg",
-      program: ["Curso intensivo de verano 2026"],
+      program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
     {
       name: "Rock School for Dance Education",
-      country: "Estados Unidos",
-      city: "Filadelfia, Pensilvania",
+      country: "Chile y Perú",
+      city: "Pensilvania, Estados Unidos",
       description:
         "El curso intensivo de verano 2026 de The Rock School ofrece atención personalizada por parte de un galardonado equipo docente en instalaciones de última generación.",
       image: "/images/ballet_school_2.jpg",
-      program: ["Curso intensivo de verano 2026"],
+      program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
  {
-      name: "Westchester Ballet Company,",
-      country: "Estados Unidos",
-      city: "Ossining, Nueva York",
+      name: "Westchester Ballet Company",
+      country: "Chile",
+      city: "Nueva York, Estados Unidos",
       description:
         "Nuestras clases fortalecen el cuerpo y la confianza. Y nuestros programas continúan abriendo nuevos caminos donde antes no los había.",
       image: "/images/ballet_school_2.jpg",
-      program: ["Curso intensivo de verano 2026"],
+      program: ["Curso intensivo de verano 2026 (Chile)"],
     },
   ];
 
@@ -58,7 +58,7 @@ export default function SchoolsSection() {
     <section id="escuelas" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Escuelas Partners Chile 2026
+          Escuelas Partners Chile 2026 y Perú 2027
         </h2>
         <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Instituciones de prestigio internacional que ofrecen becas a través de nuestro programa

@@ -9,7 +9,7 @@ export default function WinnersSection() {
   const winners = [
     {
       year: 2024,
-      title: "Estudiantes beneficiarios de una beca 2024",
+      title: "Estudiantes ganadores de una beca 2024",
       description:
         "En la edición 2024, se otorgaron becas a través de 9 escuelas internacionales de prestigio, las cuales fueron entregadas tanto en Chile como en Perú.",
     
@@ -39,7 +39,7 @@ export default function WinnersSection() {
     },
     {
       year: 2022,
-      title: "Estudiantes beneficiarios de una beca 2022",
+      title: "Estudiantes ganadores de una beca 2022",
       description:
         "La primera edición de Bailarines del Mañana reunió a talento joven chileno en audiciones presenciales.",
       
@@ -55,7 +55,7 @@ export default function WinnersSection() {
     <section id="ganadores" className="py-20 md:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Estudiantes Beneficiarios de Jornadas Anteriores
+          Estudiantes Ganadores de una Beca
         </h2>
         <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Conoce a los talentosos bailarines que han sido beneficiarios con becas internacionales a través de nuestro programa
