@@ -17,31 +17,57 @@ export default function RegistrationSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const { name, value } = e.target;
+
+  setFormData((prev) => {
+    const updated = { ...prev, [name]: value };
+
+    // Si elige solo clase, limpiar categoría
+    if (name === "activity" && value === "clase") {
+      updated.category = "";
+    }
+
+    return updated;
+  });
+};
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+       // Validación campos obligatorios
+  if (
+    !formData.fullName ||
+    !formData.email ||
+    !formData.phone ||
+    !formData.age ||
+    !formData.category ||
+    !formData.city ||
+    !formData.activity
+  ) {
+    toast.error("Por favor completa todos los campos obligatorios");
+    return;
+  }
 
-    if (
-      !formData.fullName ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.age ||
-      !formData.category ||
-      !formData.city ||
-      !formData.activity
-    ) {
-      toast.error("Por favor completa todos los campos obligatorios");
+  // ✅ VALIDACIÓN DE EDAD SEGÚN ACTIVIDAD
+  const age = Number(formData.age);
+
+  if (formData.activity === "audicion" || formData.activity === "ambas") {
+    
+    if (!formData.category) {
+      toast.error("Debes seleccionar una categoría para postular a la beca");
       return;
     }
+
+    if (formData.category === "junior" && (age < 12 || age > 15)) {
+      toast.error("Para categoría Junior la edad debe estar entre 12 y 15 años");
+      return;
+    }
+
+    if (formData.category === "senior" && (age < 16 || age > 18)) {
+      toast.error("Para categoría Senior la edad debe estar entre 16 y 18 años");
+      return;
+    }
+  }
 
     setIsSubmitting(true);
 
@@ -71,12 +97,12 @@ export default function RegistrationSection() {
     <section id="inscripcion" className="py-20 md:py-32 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Inscripción Audiciones 2026
+          Inscripción Audiciones Chile 2026
         </h2>
 
         <p className="text-lg font-lato text-gray-600 text-center mb-16">
-          Las audiciones se realizarán en Santiago y Concón. 
-          El mismo día se impartirá una clase magistral abierta a los participantes.
+          Las audiciones se realizarán el 11 de abril en Concón y el 12 de abril en Santiago. 
+          El mismo día se impartirá una clase magistral abierta a los participantes de las audiciones o a bailarines que solo quieran participar de la clase.
           Puedes inscribirte solo a la audición, solo a la clase magistral, o a ambas actividades.
           El valor de inscripción varía según la opción seleccionada.
         </p>
@@ -136,17 +162,15 @@ export default function RegistrationSection() {
             <div>
               <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
                 Edad *
-              </label>
-              <input
-                type="number"
-                name="age"
-                value={formData.age}
-                onChange={handleChange}
-                min="10"
-                max="25"
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
-                placeholder="Edad"
-              />
+               </label>
+               <input
+               type="number"
+               name="age"
+               value={formData.age}
+               onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+              placeholder="Edad"
+  />
             </div>
 
             {/* Categoría */}
@@ -158,7 +182,8 @@ export default function RegistrationSection() {
                 name="category"
                 value={formData.category}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+                disabled={formData.activity === "clase"}
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato disabled:bg-gray-100 disabled:text-gray-400"
               >
                 <option value="">Selecciona categoría</option>
                 <option value="junior">Junior</option>
