@@ -8,9 +8,11 @@
 export default function Footer() {
   const quickLinks = [
     { href: "#inicio", label: "Inicio" },
-    { href: "#programa", label: "Programa" },
+    { href: "#creador", label: "Creador" },
+    { href: "#escuelas", label: "Escuelas" },
+    { href: "#ganadores", label: "Ganadores" },
     { href: "#inscripcion", label: "Inscripción" },
-    { href: "#contacto", label: "Contacto" },
+    { href: "#preguntasfrecuentes", label: "Preguntas" },
   ];
 
   return (

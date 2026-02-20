@@ -2,22 +2,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
-/**
- * RegistrationSection - Formulario de inscripción elegante
- * Diseño: Elegancia Contemporánea
- * - Campos de información personal
- * - Validación de datos
- * - Confirmación de envío
- */
 export default function RegistrationSection() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
     age: "",
+    category: "",
+    city: "",
+    activity: "",
     school: "",
     experience: "",
-    country: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,29 +35,33 @@ export default function RegistrationSection() {
       !formData.email ||
       !formData.phone ||
       !formData.age ||
-      !formData.country
+      !formData.category ||
+      !formData.city ||
+      !formData.activity
     ) {
-      toast.error("Por favor completa todos los campos requeridos");
+      toast.error("Por favor completa todos los campos obligatorios");
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      // Simular envío de formulario
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success("¡Inscripción recibida! Nos pondremos en contacto pronto.");
+      toast.success("¡Inscripción recibida! Te contactaremos pronto con los detalles de pago.");
+
       setFormData({
         fullName: "",
         email: "",
         phone: "",
         age: "",
+        category: "",
+        city: "",
+        activity: "",
         school: "",
         experience: "",
-        country: "",
       });
     } catch (error) {
-      toast.error("Error al enviar el formulario. Intenta de nuevo.");
+      toast.error("Error al enviar el formulario. Intenta nuevamente.");
     } finally {
       setIsSubmitting(false);
     }
@@ -72,10 +71,14 @@ export default function RegistrationSection() {
     <section id="inscripcion" className="py-20 md:py-32 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Inscripción
+          Inscripción Audiciones 2026
         </h2>
+
         <p className="text-lg font-lato text-gray-600 text-center mb-16">
-          Completa el formulario para participar en las audiciones de Bailarines del Mañana
+          Las audiciones se realizarán en Santiago y Concón. 
+          El mismo día se impartirá una clase magistral abierta a los participantes.
+          Puedes inscribirte solo a la audición, solo a la clase magistral, o a ambas actividades.
+          El valor de inscripción varía según la opción seleccionada.
         </p>
 
         <form
@@ -83,17 +86,18 @@ export default function RegistrationSection() {
           className="bg-white rounded-lg shadow-lg p-8 md:p-12"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Nombre Completo */}
+
+            {/* Nombre */}
             <div className="md:col-span-2">
               <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Nombre Completo *
+                Nombre Completo del Participante *
               </label>
               <input
                 type="text"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent font-lato"
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
                 placeholder="Tu nombre completo"
               />
             </div>
@@ -108,7 +112,7 @@ export default function RegistrationSection() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent font-lato"
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
                 placeholder="tu@email.com"
               />
             </div>
@@ -116,15 +120,15 @@ export default function RegistrationSection() {
             {/* Teléfono */}
             <div>
               <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Teléfono *
+                Teléfono Celular *
               </label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent font-lato"
-                placeholder="+1 (555) 000-0000"
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+                placeholder="+56 9 0000 0000"
               />
             </div>
 
@@ -138,36 +142,70 @@ export default function RegistrationSection() {
                 name="age"
                 value={formData.age}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent font-lato"
-                placeholder="Entre 13 y 19 años"
-                min="13"
-                max="19"
+                min="10"
+                max="25"
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+                placeholder="Edad"
               />
             </div>
 
-            {/* País */}
+            {/* Categoría */}
             <div>
               <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                País *
+                Categoría *
               </label>
               <select
-                name="country"
-                value={formData.country}
+                name="category"
+                value={formData.category}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent font-lato"
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
               >
-                <option value="">Selecciona tu país</option>
-                <option value="chile">Chile</option>
-                <option value="argentina">Argentina</option>
-                <option value="colombia">Colombia</option>
-                <option value="peru">Perú</option>
-                <option value="mexico">México</option>
-                <option value="cuba">Cuba</option>
-                <option value="otro">Otro</option>
+                <option value="">Selecciona categoría</option>
+                <option value="junior">Junior</option>
+                <option value="senior">Senior</option>
               </select>
             </div>
 
-            {/* Escuela Actual */}
+            {/* Ciudad */}
+            <div>
+              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+                Ciudad en la que participas *
+              </label>
+              <select
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+              >
+                <option value="">Selecciona ciudad</option>
+                <option value="santiago">Santiago</option>
+                <option value="concon">Concón</option>
+              </select>
+            </div>
+
+            {/* Actividad */}
+            <div className="md:col-span-2">
+              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+                Actividad en la que participas *
+              </label>
+              <select
+                name="activity"
+                value={formData.activity}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+              >
+                <option value="">Selecciona una opción</option>
+                <option value="audicion">Audición para beca</option>
+                <option value="clase">Clase magistral</option>
+                <option value="ambas">Audición + Clase magistral</option>
+              </select>
+
+              <p className="text-xs text-gray-500 mt-2 font-lato">
+                El valor de inscripción dependerá de la actividad seleccionada.
+              </p>
+            </div>
+
+            {/* Escuela */}
             <div>
               <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
                 Escuela de Ballet Actual
@@ -177,7 +215,7 @@ export default function RegistrationSection() {
                 name="school"
                 value={formData.school}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent font-lato"
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
                 placeholder="Nombre de tu escuela"
               />
             </div>
@@ -185,25 +223,23 @@ export default function RegistrationSection() {
             {/* Experiencia */}
             <div className="md:col-span-2">
               <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Años de Experiencia en Ballet
+                Años de experiencia en Ballet y Contemporáneo
               </label>
               <textarea
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent font-lato"
-                placeholder="Cuéntanos sobre tu experiencia en ballet..."
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+                placeholder="Describe tu experiencia..."
               />
             </div>
           </div>
 
-          {/* Términos y Condiciones */}
           <div className="mt-8 pt-8 border-t border-gray-200">
             <p className="text-xs font-lato text-gray-600 mb-6">
-              Al enviar este formulario, aceptas que tus datos serán utilizados para
-              procesar tu inscripción a Bailarines del Mañana. Tus datos serán tratados
-              con confidencialidad.
+              Al enviar este formulario, aceptas que tus datos serán utilizados
+              para procesar tu inscripción. Nos contactaremos contigo con los detalles de pago.
             </p>
 
             <Button

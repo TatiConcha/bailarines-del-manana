@@ -48,9 +48,9 @@ export default function SchoolsSection() {
       country: "Chile",
       city: "Nueva York, Estados Unidos",
       description:
-        "Nuestras clases fortalecen el cuerpo y la confianza. Y nuestros programas continúan abriendo nuevos caminos donde antes no los había.",
+        "Nuestras clases fortalecen el cuerpo y la confianza. Y nuestros programas de verano continúan abriendo nuevos caminos donde antes no los había. Este verano, bajo la dirección de Sebastián Vinet, cada alumno vivirá una experiencia formativa exigente, inspiradora y transformadora.",
       image: "/images/ballet_school_2.jpg",
-      program: ["Curso intensivo de verano 2026 (Chile)"],
+      program: ["Curso intensivo de verano 2026 (Chile), incluye hospedaje"],
     },
   ];
 
@@ -58,7 +58,7 @@ export default function SchoolsSection() {
     <section id="escuelas" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Escuelas Partners Chile 2026 y Perú 2027
+          Escuelas Partners Chile y Perú 2026
         </h2>
         <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Instituciones de prestigio internacional que ofrecen becas a través de nuestro programa
