@@ -17,13 +17,17 @@ export default function RegistrationSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+   const handleChange = (
+  e: React.ChangeEvent<
+    HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+  >
+) => {
   const { name, value } = e.target;
 
   setFormData((prev) => {
     const updated = { ...prev, [name]: value };
 
-    // Si elige solo clase, limpiar categoría
+    // Si cambia a solo clase, limpiar categoría
     if (name === "activity" && value === "clase") {
       updated.category = "";
     }
