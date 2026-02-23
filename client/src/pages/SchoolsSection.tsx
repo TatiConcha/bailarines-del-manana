@@ -31,7 +31,7 @@ export default function SchoolsSection() {
       city: "New Jersey, Estados Unidos",
       description:
         "El curso intensivo de verano está dirigido a estudiantes de ballet comprometidos, que sienten una verdadera pasión por la danza y están preparados para alcanzar un nuevo nivel de excelencia artística. Los estudiantes entrenarán en nuestras instalaciones de última generación bajo la guía de un distinguido equipo docente que incluirá maestros invitados de reconocimiento internacional.",
-      image: "/images/ballet_school_1.jpg",
+      image: "/images/NJ-Ballet-feature-logo.jpg",
       program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
     {
@@ -40,7 +40,7 @@ export default function SchoolsSection() {
       city: "Pensilvania, Estados Unidos",
       description:
         "El curso intensivo de verano 2026 de The Rock School ofrece atención personalizada por parte de un galardonado equipo docente en instalaciones de última generación.",
-      image: "/images/ballet_school_2.jpg",
+      image: "/images/The-Rock-School-for-Dance-Education.jpg",
       program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
  {

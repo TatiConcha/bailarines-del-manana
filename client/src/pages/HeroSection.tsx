@@ -14,8 +14,8 @@ export default function HeroSection() {
       <div className="relative h-screen flex items-center justify-center">
         {/* Imagen de fondo */}
         <img
-            src="/images/hero_ballet.jpg"
-             alt="Bailarina de ballet en pose elegante"
+            src="/images/ballet_school_1.jpg"
+             alt="Sala de ballet con barras y espejo solitaria"
               loading="eager"
               fetchPriority="high"
               decoding="async"

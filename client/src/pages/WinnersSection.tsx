@@ -1,7 +1,7 @@
 /**
  * WinnersSection - Sección de ganadores de audiciones anteriores
  * Diseño: Elegancia Contemporánea
- * - Ganadores de 2022 y 2024
+ * - Ganadores 2024
  * - Información de becas otorgadas
  * - Galería visual
  */
@@ -37,18 +37,7 @@ export default function WinnersSection() {
       ],
 
     },
-    {
-      year: 2022,
-      title: "Estudiantes ganadores de una beca 2022",
-      description:
-        "La primera edición de Bailarines del Mañana reunió a talento joven chileno en audiciones presenciales.",
-      
-      chile: [
-        "Eloísa Quevedo: Melbourne Academy of the Arts, Australia",
-        "Emilia Mansilla: La Superior, México",
-        "Javiera Concha: Lizt Alfonso Dance, Cuba",
-      ],
-    },
+    
   ];
 
   return (
@@ -57,8 +46,10 @@ export default function WinnersSection() {
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
           Estudiantes Ganadores de una Beca
         </h2>
-        <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-          Conoce a los talentosos bailarines que han sido beneficiarios con becas internacionales a través de nuestro programa
+        <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
+          Conoce a los talentosos bailarines que han sido beneficiarios con becas internacionales
+          <br className="hidden md:block" />
+           a través de nuestro programa
         </p>
 
         <div className="space-y-20">
@@ -133,8 +124,8 @@ export default function WinnersSection() {
         {/* Imagen de ganadores */}
         <div className="mt-20">
           <img
-            src="/images/ballet_winners.jpg"
-            alt="Ganadores de becas celebrando"
+            src="/images/bailarinaenbarrablancoynegro.jpg"
+            alt="Bailarina de ballet apoyanda en barra"
             className="w-full h-auto rounded-lg shadow-lg"
           />
         </div>

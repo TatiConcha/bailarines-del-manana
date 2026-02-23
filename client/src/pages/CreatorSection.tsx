@@ -7,14 +7,14 @@
  */
 export default function CreatorSection() {
   return (
-    <section id="creador" className="py-20 md:py-32 bg-white">
+    <section id="fundador" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Imagen */}
           <div className="order-2 md:order-1">
             <img
-              src="/images/sebastianvinetclases.jpg"
-              alt="Sebastián Vinet, bailarín y creador"
+              src="/images/sebastianvinetblancoynegro.jpg"
+              alt="Sebastián Vinet, bailarín y fundador"
               className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500"
             />
           </div>

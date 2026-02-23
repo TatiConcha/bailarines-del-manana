@@ -8,7 +8,7 @@
 export default function Footer() {
   const quickLinks = [
     { href: "#inicio", label: "Inicio" },
-    { href: "#creador", label: "Creador" },
+    { href: "#fundador", label: "Fundador" },
     { href: "#escuelas", label: "Escuelas" },
     { href: "#ganadores", label: "Ganadores" },
     { href: "#inscripcion", label: "Inscripción" },

@@ -13,11 +13,11 @@ export default function Header() {
 
   const navItems = [
     { label: "Inicio", href: "#inicio" },
-    { label: "Creador", href: "#creador" },
+    { label: "Fundador", href: "#fundador" },
     { label: "Ganadores", href: "#ganadores" },
     { label: "Escuelas", href: "#escuelas" },
     { label: "Inscripción", href: "#inscripcion" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Preguntas", href: "#preguntasfrecuentes" },
   ];
 
   return (
