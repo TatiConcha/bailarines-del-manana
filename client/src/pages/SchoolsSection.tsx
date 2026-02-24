@@ -5,6 +5,13 @@
  * - Ubicación geográfica
  * - Imágenes de las instalaciones
  */
+/**
+ * SchoolsSection - Sección de escuelas de ballet participantes
+ * Diseño: Elegancia Contemporánea
+ * - Descripción de cada escuela
+ * - Ubicación geográfica
+ * - Imágenes de las instalaciones
+ */
 export default function SchoolsSection() {
   const schools = [
     {
