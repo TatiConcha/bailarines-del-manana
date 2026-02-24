@@ -8,6 +8,7 @@ export default function RegistrationSection() {
     email: "",
     phone: "",
     age: "",
+    birthDate: "",
     category: "",
     city: "",
     activity: "",
@@ -45,6 +46,7 @@ export default function RegistrationSection() {
       !formData.email ||
       !formData.phone ||
       !formData.age ||
+      !formData.birthDate ||
       !formData.category ||
       !formData.city ||
       !formData.activity
@@ -102,6 +104,7 @@ export default function RegistrationSection() {
         email: "",
         phone: "",
         age: "",
+        birthDate: "",
         category: "",
         city: "",
         activity: "",
@@ -127,7 +130,7 @@ export default function RegistrationSection() {
           Inscripción Audiciones Chile 2026
         </h2>
 
-        <p className="text-lg font-lato text-gray-600 text-center mb-16">
+        <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
           Las audiciones se realizarán el 11 de abril en Concón y el 12
           de abril en Santiago. El mismo día se impartirá una clase
           magistral abierta a los participantes de las audiciones o a
@@ -188,57 +191,7 @@ export default function RegistrationSection() {
               />
             </div>
 
-            {/* Edad */}
-            <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Edad *
-              </label>
-              <input
-                type="number"
-                name="age"
-                value={formData.age}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
-                placeholder="Edad"
-              />
-            </div>
-
-            {/* Categoría */}
-            <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Categoría *
-              </label>
-              <select
-                name="category"
-                value={formData.category}
-                onChange={handleChange}
-                disabled={formData.activity === "clase"}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato disabled:bg-gray-100 disabled:text-gray-400"
-              >
-                <option value="">Selecciona categoría</option>
-                <option value="junior">Junior</option>
-                <option value="senior">Senior</option>
-              </select>
-            </div>
-
-            {/* Ciudad */}
-            <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Ciudad en la que participas *
-              </label>
-              <select
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
-              >
-                <option value="">Selecciona ciudad</option>
-                <option value="santiago">Santiago</option>
-                <option value="concon">Concón</option>
-              </select>
-            </div>
-
-            {/* Actividad */}
+             {/* Actividad */}
             <div className="md:col-span-2">
               <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
                 Actividad en la que participas *
@@ -263,6 +216,71 @@ export default function RegistrationSection() {
               </p>
             </div>
 
+            {/* Edad */}
+            <div>
+            <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+             Edad *
+            </label>
+            <input
+              type="number"
+              name="age"
+              value={formData.age}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+             placeholder="Edad"
+              />
+            </div>
+
+           {/* Fecha de Nacimiento */}
+            <div>
+            <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+              Fecha de Nacimiento *
+          </label>
+           <input
+           type="date"
+           name="birthDate"
+          value={formData.birthDate}
+           onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+             />
+           </div>
+
+            
+            {/* Ciudad */}
+            <div>
+              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+                Ciudad en la que participas *
+              </label>
+              <select
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+              >
+                <option value="">Selecciona ciudad</option>
+                <option value="santiago">Santiago</option>
+                <option value="concon">Concón</option>
+              </select>
+            </div>
+             
+             {/* Categoría */}
+            <div>
+              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+                Categoría *
+              </label>
+              <select
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+                disabled={formData.activity === "clase"}
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato disabled:bg-gray-100 disabled:text-gray-400"
+              >
+                <option value="">Selecciona categoría</option>
+                <option value="junior">Junior</option>
+                <option value="senior">Senior</option>
+              </select>
+            </div>
+            
             {/* Escuela */}
             <div>
               <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
