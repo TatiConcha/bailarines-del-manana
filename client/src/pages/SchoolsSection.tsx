@@ -87,8 +87,15 @@ export default function SchoolsSection() {
                 <img
                   src={school.image}
                   alt={`${school.name} - ${school.city}`}
-                  className="w-full h-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-                />
+                  className={`w-full h-auto rounded-lg shadow-lg hover:shadow-xl transition-all duration-300
+                 ${
+                  school.name === "Houston Ballet Academy" ||
+                  school.name === "Rock School for Dance Education"
+                 ? "brightness-90 contrast-105"
+                  : ""
+                }
+              `}
+              />
               </div>
 
               {/* Contenido */}

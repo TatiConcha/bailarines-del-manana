@@ -23,13 +23,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           
           {/* Marca */}
-          <div>
+          <div className="max-w-sm">
             <h3 className="text-xl font-cormorant font-semibold mb-4">
               Bailarines del Mañana
             </h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Programa internacional de audición para becas de ballet en
-              prestigiosas escuelas de Estados Unidos.
+            <p className="text-sm text-gray-600 leading-7 tracking-wide">
+               Programa internacional de audición para becas de ballet
+                <br className="hidden md:block" />
+                en prestigiosas escuelas de Estados Unidos.
             </p>
           </div>
 
@@ -42,11 +43,12 @@ export default function Footer() {
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
                   <li key={link.href}>
-                    <a
+                     <a
                       href={link.href}
-                      className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                    >
-                      {link.label}
+                       className="relative group inline-block text-sm text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                  >
+                    {link.label}
+                     <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-gray-700 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                   </li>
                 ))}

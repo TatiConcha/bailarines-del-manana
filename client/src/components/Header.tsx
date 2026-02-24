@@ -16,8 +16,8 @@ export default function Header() {
   const navItems = [
     { label: "Inicio", href: "#inicio" },
     { label: "Fundador", href: "#fundador" },
-    { label: "Ganadores", href: "#ganadores" },
     { label: "Escuelas", href: "#escuelas" },
+    { label: "Ganadores", href: "#ganadores" },
     { label: "Inscripción", href: "#inscripcion" },
     { label: "Preguntas", href: "#preguntasfrecuentes" },
   ];

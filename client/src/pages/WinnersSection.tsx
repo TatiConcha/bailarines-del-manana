@@ -121,8 +121,8 @@ export default function WinnersSection() {
         </div>
 
         {/* Imagen de ganadores */}
-        <div className="mt-2mt-32 group">
-          <div className="relative overflow-hidden rounded-sm"></div>
+        <div className="mt-32 group">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg"></div>
           <img
             src="/images/bailarinaenbarrablancoynegro.jpg"
             alt="Bailarina de ballet apoyanda en barra"
