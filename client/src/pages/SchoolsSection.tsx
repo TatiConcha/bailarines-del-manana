@@ -13,7 +13,7 @@ export default function SchoolsSection() {
       city: "Texas, Estados Unidos",
       description:
         "Desde su fundación en 1955, Houston Ballet Academy ha brindado la más alta calidad de formación en ballet a bailarines aspirantes. Durante el verano, los estudiantes recibirán una formación que enriquecerá y complementará su educación previa en danza.",
-      image: "/images/ballet_school_1.jpg",
+      image: "/images/Houston-Ballet-Academy-image.jpg",
       program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
     {
@@ -22,7 +22,7 @@ export default function SchoolsSection() {
       city: "Carolina del Norte, Estados Unidos",
       description:
         "IBA ofrece un programa intensivo de verano, diseñado para estudiantes que se encuentren en un nivel intermedio o superior. El objetivo es brindar oportunidades para que el bailarín crezca tanto a nivel técnico como artístico.",
-      image: "/images/ballet_school_2.jpg",
+      image: "/images/International-Ballet-Academy-image.jpg",
       program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
     {
@@ -31,7 +31,7 @@ export default function SchoolsSection() {
       city: "New Jersey, Estados Unidos",
       description:
         "El curso intensivo de verano está dirigido a estudiantes de ballet comprometidos, que sienten una verdadera pasión por la danza y están preparados para alcanzar un nuevo nivel de excelencia artística. Los estudiantes entrenarán en nuestras instalaciones de última generación bajo la guía de un distinguido equipo docente que incluirá maestros invitados de reconocimiento internacional.",
-      image: "/images/NJ-Ballet-feature-logo.jpg",
+      image: "/images/New-Jersey-Ballet-image.jpg",
       program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
     {
@@ -40,7 +40,7 @@ export default function SchoolsSection() {
       city: "Pensilvania, Estados Unidos",
       description:
         "El curso intensivo de verano 2026 de The Rock School ofrece atención personalizada por parte de un galardonado equipo docente en instalaciones de última generación.",
-      image: "/images/The-Rock-School-for-Dance-Education.jpg",
+      image: "/images/Rock-School-for-Dance-Education-image.jpg",
       program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
  {
@@ -49,7 +49,7 @@ export default function SchoolsSection() {
       city: "Nueva York, Estados Unidos",
       description:
         "Nuestras clases fortalecen el cuerpo y la confianza. Y nuestros programas de verano continúan abriendo nuevos caminos donde antes no los había. Este verano, bajo la dirección de Sebastián Vinet, cada alumno vivirá una experiencia formativa exigente, inspiradora y transformadora.",
-      image: "/images/ballet_school_2.jpg",
+      image: "/images/Westchester-Ballet-Company-image.jpg",
       program: ["Curso intensivo de verano 2026 (Chile), incluye hospedaje"],
     },
   ];
