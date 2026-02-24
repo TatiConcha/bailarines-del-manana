@@ -5,6 +5,13 @@
  * - Biografía elegante
  * - Logros y trayectoria
  */
+/**
+ * CreatorSection - Sección sobre Sebastián Vinet
+ * Diseño: Elegancia Contemporánea
+ * - Imagen del creador
+ * - Biografía elegante
+ * - Logros y trayectoria
+ */
 export default function CreatorSection() {
   return (
     <section id="fundador" className="py-20 md:py-32 bg-white">

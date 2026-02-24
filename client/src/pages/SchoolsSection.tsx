@@ -67,8 +67,11 @@ export default function SchoolsSection() {
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
           Escuelas Partners Chile y Perú 2026
         </h2>
-        <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-          Instituciones de prestigio internacional que ofrecen becas a través de nuestro programa
+        <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed">
+          Instituciones de prestigio internacional que ofrecen becas
+          <span className="block">
+           a través de nuestro programa
+           </span>
         </p>
 
         <div className="space-y-20">

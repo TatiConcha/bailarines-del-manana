@@ -17,67 +17,67 @@ export default function RegistrationSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-   const handleChange = (
-  e: React.ChangeEvent<
-    HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-  >
-) => {
-  const { name, value } = e.target;
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
 
-  setFormData((prev) => {
-    const updated = { ...prev, [name]: value };
+    setFormData((prev) => {
+      const updated = { ...prev, [name]: value };
 
-    // Si cambia a solo clase, limpiar categoría
-    if (name === "activity" && value === "clase") {
-      updated.category = "";
-    }
+      if (name === "activity" && value === "clase") {
+        updated.category = "";
+      }
 
-    return updated;
-  });
-};
+      return updated;
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-       // Validación campos obligatorios
-  if (
-    !formData.fullName ||
-    !formData.email ||
-    !formData.phone ||
-    !formData.age ||
-    !formData.category ||
-    !formData.city ||
-    !formData.activity
-  ) {
-    toast.error("Por favor completa todos los campos obligatorios");
-    return;
-  }
 
-  // ✅ VALIDACIÓN DE EDAD SEGÚN ACTIVIDAD
-  const age = Number(formData.age);
-
-  if (formData.activity === "audicion" || formData.activity === "ambas") {
-    
-    if (!formData.category) {
-      toast.error("Debes seleccionar una categoría para postular a la beca");
+    if (
+      !formData.fullName ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.age ||
+      !formData.category ||
+      !formData.city ||
+      !formData.activity
+    ) {
+      toast.error("Por favor completa todos los campos obligatorios.");
       return;
     }
 
-    if (formData.category === "junior" && (age < 12 || age > 15)) {
-      toast.error("Para categoría Junior la edad debe estar entre 12 y 15 años");
-      return;
-    }
+    const age = Number(formData.age);
 
-    if (formData.category === "senior" && (age < 16 || age > 18)) {
-      toast.error("Para categoría Senior la edad debe estar entre 16 y 18 años");
-      return;
+    if (formData.activity === "audicion" || formData.activity === "ambas") {
+      if (!formData.category) {
+        toast.error("Debes seleccionar una categoría para postular a la beca.");
+        return;
+      }
+
+      if (formData.category === "junior" && (age < 12 || age > 15)) {
+        toast.error("Para categoría Junior la edad debe estar entre 12 y 15 años.");
+        return;
+      }
+
+      if (formData.category === "senior" && (age < 16 || age > 18)) {
+        toast.error("Para categoría Senior la edad debe estar entre 16 y 18 años.");
+        return;
+      }
     }
-  }
 
     setIsSubmitting(true);
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success("¡Inscripción recibida! Te contactaremos pronto con los detalles de pago.");
+
+      toast.success(
+        "Inscripción recibida correctamente. Te contactaremos pronto con los detalles de pago."
+      );
 
       setFormData({
         fullName: "",
@@ -90,7 +90,7 @@ export default function RegistrationSection() {
         school: "",
         experience: "",
       });
-    } catch (error) {
+    } catch {
       toast.error("Error al enviar el formulario. Intenta nuevamente.");
     } finally {
       setIsSubmitting(false);
@@ -98,43 +98,52 @@ export default function RegistrationSection() {
   };
 
   return (
-    <section id="inscripcion" className="py-20 md:py-32 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Inscripción Audiciones Chile 2026
-        </h2>
+    <section id="inscripcion" className="py-28 md:py-40 bg-gray-50">
+      <div className="max-w-3xl mx-auto px-6">
 
-        <p className="text-lg font-lato text-gray-600 text-center mb-16">
-          Las audiciones se realizarán el 11 de abril en Concón y el 12 de abril en Santiago. 
-          El mismo día se impartirá una clase magistral abierta a los participantes de las audiciones o a bailarines que solo quieran participar de la clase.
-          Puedes inscribirte solo a la audición, solo a la clase magistral, o a ambas actividades.
-          El valor de inscripción varía según la opción seleccionada.
-        </p>
+        {/* Header */}
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-5xl font-cormorant font-semibold tracking-tight text-gray-900 mb-6">
+            Inscripción · Audiciones Chile 2026
+          </h2>
 
+          <p className="text-lg md:text-xl font-lato text-gray-600 leading-relaxed whitespace-pre-line max-w-2xl mx-auto">
+            Las audiciones se realizarán el 11 de abril en Concón 
+            y el 12 de abril en Santiago.
+
+            El mismo día se impartirá una clase magistral abierta tanto a los participantes de las audiciones como a bailarines que deseen asistir únicamente a la clase.
+
+            Puedes inscribirte solo a la audición, solo a la clase magistral, o a ambas actividades.
+
+            El valor de inscripción varía según la opción seleccionada.
+          </p>
+        </div>
+
+        {/* Formulario */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-lg shadow-lg p-8 md:p-12"
+          className="bg-white border border-gray-200 p-10 md:p-14"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8">
 
             {/* Nombre */}
             <div className="md:col-span-2">
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Nombre Completo del Participante *
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
+                Nombre completo del participante *
               </label>
               <input
                 type="text"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
-                placeholder="Tu nombre completo"
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato text-base"
+                placeholder="Nombre completo"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
                 Email *
               </label>
               <input
@@ -142,44 +151,44 @@ export default function RegistrationSection() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
-                placeholder="tu@email.com"
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato"
+                placeholder="correo@ejemplo.com"
               />
             </div>
 
             {/* Teléfono */}
             <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Teléfono Celular *
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
+                Teléfono celular *
               </label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato"
                 placeholder="+56 9 0000 0000"
               />
             </div>
 
             {/* Edad */}
             <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
                 Edad *
-               </label>
-               <input
-               type="number"
-               name="age"
-               value={formData.age}
-               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
-              placeholder="Edad"
-  />
+              </label>
+              <input
+                type="number"
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato"
+                placeholder="Edad"
+              />
             </div>
 
             {/* Categoría */}
             <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
                 Categoría *
               </label>
               <select
@@ -187,7 +196,7 @@ export default function RegistrationSection() {
                 value={formData.category}
                 onChange={handleChange}
                 disabled={formData.activity === "clase"}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato disabled:bg-gray-100 disabled:text-gray-400"
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato disabled:bg-gray-100 disabled:text-gray-400"
               >
                 <option value="">Selecciona categoría</option>
                 <option value="junior">Junior</option>
@@ -197,14 +206,14 @@ export default function RegistrationSection() {
 
             {/* Ciudad */}
             <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
                 Ciudad en la que participas *
               </label>
               <select
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato"
               >
                 <option value="">Selecciona ciudad</option>
                 <option value="santiago">Santiago</option>
@@ -214,14 +223,14 @@ export default function RegistrationSection() {
 
             {/* Actividad */}
             <div className="md:col-span-2">
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
                 Actividad en la que participas *
               </label>
               <select
                 name="activity"
                 value={formData.activity}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato"
               >
                 <option value="">Selecciona una opción</option>
                 <option value="audicion">Audición para beca</option>
@@ -229,54 +238,55 @@ export default function RegistrationSection() {
                 <option value="ambas">Audición + Clase magistral</option>
               </select>
 
-              <p className="text-xs text-gray-500 mt-2 font-lato">
+              <p className="text-sm text-gray-500 mt-3 font-lato leading-relaxed">
                 El valor de inscripción dependerá de la actividad seleccionada.
               </p>
             </div>
 
             {/* Escuela */}
             <div>
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Escuela de Ballet Actual
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
+                Escuela de ballet actual
               </label>
               <input
                 type="text"
                 name="school"
                 value={formData.school}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato"
                 placeholder="Nombre de tu escuela"
               />
             </div>
 
             {/* Experiencia */}
             <div className="md:col-span-2">
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
-                Años de experiencia en Ballet y Contemporáneo
+              <label className="block text-xs uppercase tracking-wider font-semibold text-gray-700 mb-3">
+                Años de experiencia en ballet y contemporáneo
               </label>
               <textarea
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-gray-900 font-lato"
-                placeholder="Describe tu experiencia..."
+                rows={5}
+                className="w-full px-4 py-4 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-900 font-lato leading-relaxed"
+                placeholder="Describe brevemente tu formación y experiencia."
               />
             </div>
           </div>
 
-          <div className="mt-8 pt-8 border-t border-gray-200">
-            <p className="text-xs font-lato text-gray-600 mb-6">
-              Al enviar este formulario, aceptas que tus datos serán utilizados
-              para procesar tu inscripción. Nos contactaremos contigo con los detalles de pago.
+          <div className="mt-14 pt-10 border-t border-gray-200">
+            <p className="text-sm font-lato text-gray-600 leading-relaxed mb-8">
+              Al enviar este formulario, aceptas que tus datos serán utilizados para procesar tu inscripción.
+
+              Nos contactaremos contigo con los detalles de pago correspondientes.
             </p>
 
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gray-900 text-white hover:bg-gray-800 font-cormorant text-lg py-6 rounded-none border-2 border-gray-900"
+              className="w-full bg-gray-900 text-white hover:bg-gray-800 font-cormorant text-lg py-6 rounded-none border border-gray-900 tracking-wide"
             >
-              {isSubmitting ? "Enviando..." : "Enviar Inscripción"}
+              {isSubmitting ? "Enviando inscripción…" : "Enviar inscripción"}
             </Button>
           </div>
         </form>
