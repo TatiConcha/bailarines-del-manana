@@ -122,13 +122,13 @@ export default function WinnersSection() {
 
         {/* Imagen de ganadores */}
         <div className="mt-32 group">
-          <div className="relative overflow-hidden rounded-2xl shadow-lg"></div>
+          <div className="relative overflow-hidden rounded-2xl shadow-lg">
           <img
             src="/images/bailarinaenbarrablancoynegro.jpg"
             alt="Bailarina de ballet apoyanda en barra"
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover
+            className="w-full h-auto object-cover
                  transition-transform duration-[1800ms] ease-out
                  group-hover:scale-[1.04]"
           />
@@ -139,6 +139,8 @@ export default function WinnersSection() {
                     opacity-80">
     </div>
         </div>
+      </div>
+
       </div>
     </section>
   );

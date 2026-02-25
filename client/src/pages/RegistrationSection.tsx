@@ -130,15 +130,12 @@ export default function RegistrationSection() {
           Inscripción Audiciones Chile 2026
         </h2>
 
-        <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-3xl mx-auto leading-relaxed">
-          Las audiciones se realizarán el 11 de abril en Concón y el 12
-          de abril en Santiago. El mismo día se impartirá una clase
-          magistral abierta a los participantes de las audiciones o a
-          bailarines que solo quieran participar de la clase. Puedes
-          inscribirte solo a la audición, solo a la clase magistral, o
-          a ambas actividades. El valor de inscripción varía según la
-          opción seleccionada.
-        </p>
+        <p className="text-base md:text-lg font-lato text-gray-600 text-center mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed text-balance px-4">
+  Las audiciones se realizarán el 11 de abril en Concón y el 12 de abril en Santiago. 
+  El mismo día se impartirá una clase magistral abierta a los participantes de las audiciones 
+  o a bailarines que solo quieran participar de la clase. Puedes inscribirte solo a la audición, 
+  solo a la clase magistral o a ambas actividades. El valor de inscripción varía según la opción seleccionada.
+</p>
 
         <form
           onSubmit={handleSubmit}
