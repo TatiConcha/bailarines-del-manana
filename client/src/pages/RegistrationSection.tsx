@@ -36,17 +36,33 @@ export default function RegistrationSection() {
       if (name === "activity") {
         if (value === "clase") {
           updated.category = "";
-          updated.age = "";
+        }
+
+        // Si cambia a audición y ya hay edad, recalcular categoría
+        if (
+          (value === "audicion" || value === "ambas") &&
+          updated.age
+        ) {
+          const ageNum = Number(updated.age);
+
+          if (ageNum >= 12 && ageNum <= 15) {
+            updated.category = "junior";
+          } else if (ageNum >= 16 && ageNum <= 18) {
+            updated.category = "senior";
+          } else {
+            updated.category = "";
+          }
         }
       }
 
-      // 🔹 Si cambia edad y es audición
+      // 🔹 Si cambia edad
       if (name === "age") {
         const ageNum = Number(value);
 
         if (isAudition) {
+          // Bloquear edad fuera de rango
           if (ageNum < 12 || ageNum > 18) {
-            return prev; // bloquea edad fuera de rango
+            return prev;
           }
 
           if (ageNum >= 12 && ageNum <= 15) {
@@ -81,7 +97,7 @@ export default function RegistrationSection() {
       const age = Number(formData.age);
 
       if (!formData.category) {
-        toast.error("Edad fuera de rango permitido para audición");
+        toast.error("Edad fuera del rango permitido (12-18)");
         return;
       }
 
@@ -135,7 +151,7 @@ export default function RegistrationSection() {
   return (
     <section id="inscripcion" className="py-20 md:py-32 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-4xl md:text-6xl font-cormorant font-bold text-gray-900 mb-6 text-center">
+        <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
           Inscripción Audiciones Chile 2026
         </h2>
 
@@ -153,8 +169,9 @@ export default function RegistrationSection() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
+            {/* Nombre */}
             <div className="md:col-span-2">
-              <label className="block text-sm font-cormorant font-bold mb-3">
+              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
                 Nombre Completo del Participante *
               </label>
               <input
@@ -162,10 +179,11 @@ export default function RegistrationSection() {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border rounded-sm"
+                className="w-full px-4 py-3 border border-gray-300 rounded-sm"
               />
             </div>
 
+            {/* Email */}
             <div>
               <label className="block text-sm font-cormorant font-bold mb-3">
                 Email *
@@ -179,6 +197,7 @@ export default function RegistrationSection() {
               />
             </div>
 
+            {/* Teléfono */}
             <div>
               <label className="block text-sm font-cormorant font-bold mb-3">
                 Teléfono Celular *
@@ -192,6 +211,7 @@ export default function RegistrationSection() {
               />
             </div>
 
+            {/* Actividad */}
             <div className="md:col-span-2">
               <label className="block text-sm font-cormorant font-bold mb-3">
                 Actividad en la que participas *
@@ -209,6 +229,7 @@ export default function RegistrationSection() {
               </select>
             </div>
 
+            {/* Edad */}
             <div>
               <label className="block text-sm font-cormorant font-bold mb-3">
                 Edad *
@@ -224,6 +245,7 @@ export default function RegistrationSection() {
               />
             </div>
 
+            {/* Categoría */}
             <div>
               <label className="block text-sm font-cormorant font-bold mb-3">
                 Categoría *
@@ -231,13 +253,58 @@ export default function RegistrationSection() {
               <select
                 name="category"
                 value={formData.category}
-                disabled={true}
-                className="w-full px-4 py-3 border rounded-sm bg-gray-100"
+                disabled={formData.activity === "clase"}
+                className="w-full px-4 py-3 border rounded-sm disabled:bg-gray-100"
               >
                 <option value="">Selecciona categoría</option>
                 <option value="junior">Junior</option>
                 <option value="senior">Senior</option>
               </select>
+            </div>
+
+            {/* Ciudad */}
+            <div>
+              <label className="block text-sm font-cormorant font-bold mb-3">
+                Ciudad en la que participas *
+              </label>
+              <select
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border rounded-sm"
+              >
+                <option value="">Selecciona ciudad</option>
+                <option value="santiago">Santiago</option>
+                <option value="concon">Concón</option>
+              </select>
+            </div>
+
+            {/* Escuela */}
+            <div>
+              <label className="block text-sm font-cormorant font-bold mb-3">
+                Escuela de Ballet Actual
+              </label>
+              <input
+                type="text"
+                name="school"
+                value={formData.school}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border rounded-sm"
+              />
+            </div>
+
+            {/* Experiencia */}
+            <div className="md:col-span-2">
+              <label className="block text-sm font-cormorant font-bold mb-3">
+                Años de experiencia en Ballet y Contemporáneo
+              </label>
+              <textarea
+                name="experience"
+                value={formData.experience}
+                onChange={handleChange}
+                rows={4}
+                className="w-full px-4 py-3 border rounded-sm"
+              />
             </div>
 
           </div>
