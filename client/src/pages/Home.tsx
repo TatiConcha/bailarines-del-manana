@@ -21,8 +21,8 @@ export default function Home() {
       <main className="pt-0">
         <HeroSection />
         <CreatorSection />
-        <WinnersSection />
         <SchoolsSection />
+        <WinnersSection />
         <RegistrationSection />
         <FAQSection />
       </main>
