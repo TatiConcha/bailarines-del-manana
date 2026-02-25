@@ -155,13 +155,15 @@ export default function RegistrationSection() {
           Inscripción Audiciones Chile 2026
         </h2>
 
-        <p className="text-base md:text-lg font-lato text-gray-600 text-center mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed px-4">
-          Las audiciones se realizarán el 11 de abril en Concón y el 12 de abril en Santiago.
-          El mismo día se impartirá una clase magistral abierta a los participantes de las
-          audiciones o a bailarines que solo quieran participar de la clase. Puedes inscribirte
-          solo a la audición, solo a la clase magistral o a ambas actividades. El valor de
-          inscripción varía según la opción seleccionada.
-        </p>
+           <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16 space-y-4 px-2 sm:px-0">
+            <p className="text-base sm:text-lg md:text-xl font-lato text-gray-600 leading-relaxed sm:leading-loose">
+             Las audiciones se realizarán el 11 de abril en Concón y el 12 de abril en Santiago.
+            </p>
+
+              <p className="text-base sm:text-lg md:text-xl font-lato text-gray-600 leading-relaxed sm:leading-loose">
+               El mismo día se impartirá una clase magistral abierta a los participantes de las audiciones o a bailarines que solo quieran participar de la clase. Puedes inscribirte solo a la audición, solo a la clase magistral o a ambas actividades. El valor de inscripción varía según la opción seleccionada.
+            </p>
+           </div>
 
         <form
           onSubmit={handleSubmit}
@@ -248,7 +250,7 @@ export default function RegistrationSection() {
             {/* Categoría */}
             <div>
               <label className="block text-sm font-cormorant font-bold mb-3">
-                Categoría *
+                Categoría * (sólo para audición)
               </label>
               <select
                 name="category"
