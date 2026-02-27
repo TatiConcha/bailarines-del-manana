@@ -22,6 +22,8 @@ export default function RegistrationSection() {
     formData.activity === "audicion" ||
     formData.activity === "ambas";
 
+  const isClaseOnly = formData.activity === "clase";
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -32,13 +34,13 @@ export default function RegistrationSection() {
     setFormData((prev) => {
       const updated = { ...prev, [name]: value };
 
-      // 🔹 Si cambia actividad
+      // 🔹 Cambio de actividad
       if (name === "activity") {
         if (value === "clase") {
           updated.category = "";
+          updated.age = "";
         }
 
-        // Si cambia a audición y ya hay edad, recalcular categoría
         if (
           (value === "audicion" || value === "ambas") &&
           updated.age
@@ -55,21 +57,20 @@ export default function RegistrationSection() {
         }
       }
 
-      // 🔹 Si cambia edad
+      // 🔹 Cambio de edad
       if (name === "age") {
+        if (!isAudition) return updated;
+
         const ageNum = Number(value);
 
-        if (isAudition) {
-          // Bloquear edad fuera de rango
-          if (ageNum < 12 || ageNum > 18) {
-            return prev;
-          }
+        if (ageNum < 12 || ageNum > 18) {
+          return prev;
+        }
 
-          if (ageNum >= 12 && ageNum <= 15) {
-            updated.category = "junior";
-          } else if (ageNum >= 16 && ageNum <= 18) {
-            updated.category = "senior";
-          }
+        if (ageNum >= 12 && ageNum <= 15) {
+          updated.category = "junior";
+        } else if (ageNum >= 16 && ageNum <= 18) {
+          updated.category = "senior";
         }
       }
 
@@ -84,10 +85,10 @@ export default function RegistrationSection() {
       !formData.fullName ||
       !formData.email ||
       !formData.phone ||
-      !formData.age ||
       !formData.birthDate ||
       !formData.city ||
-      !formData.activity
+      !formData.activity ||
+      (!isClaseOnly && !formData.age)
     ) {
       toast.error("Por favor completa todos los campos obligatorios");
       return;
@@ -155,16 +156,6 @@ export default function RegistrationSection() {
           Inscripción Audiciones Chile 2026
         </h2>
 
-           <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16 space-y-4 px-2 sm:px-0">
-            <p className="text-base sm:text-lg md:text-xl font-lato text-gray-600 leading-relaxed sm:leading-loose">
-             Las audiciones se realizarán el 11 de abril en Concón y el 12 de abril en Santiago.
-            </p>
-
-              <p className="text-base sm:text-lg md:text-xl font-lato text-gray-600 leading-relaxed sm:leading-loose">
-               El mismo día se impartirá una clase magistral abierta a los participantes de las audiciones o a bailarines que solo quieran participar de la clase. Puedes inscribirte solo a la audición, solo a la clase magistral o a ambas actividades. El valor de inscripción varía según la opción seleccionada.
-            </p>
-           </div>
-
         <form
           onSubmit={handleSubmit}
           className="bg-white rounded-lg shadow-lg p-8 md:p-12"
@@ -173,7 +164,7 @@ export default function RegistrationSection() {
 
             {/* Nombre */}
             <div className="md:col-span-2">
-              <label className="block text-sm font-cormorant font-bold text-gray-900 mb-3">
+              <label className="block text-sm font-cormorant font-bold mb-3">
                 Nombre Completo del Participante *
               </label>
               <input
@@ -181,7 +172,7 @@ export default function RegistrationSection() {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm"
+                className="w-full px-4 py-3 border rounded-sm"
               />
             </div>
 
@@ -234,16 +225,17 @@ export default function RegistrationSection() {
             {/* Edad */}
             <div>
               <label className="block text-sm font-cormorant font-bold mb-3">
-                Edad *
+                Edad {!isClaseOnly && "*"}
               </label>
               <input
                 type="number"
                 name="age"
                 value={formData.age}
                 onChange={handleChange}
+                disabled={isClaseOnly}
                 min={isAudition ? 12 : undefined}
                 max={isAudition ? 18 : undefined}
-                className="w-full px-4 py-3 border rounded-sm"
+                className="w-full px-4 py-3 border rounded-sm disabled:bg-gray-100"
               />
             </div>
 
@@ -255,7 +247,7 @@ export default function RegistrationSection() {
               <select
                 name="category"
                 value={formData.category}
-                disabled={formData.activity === "clase"}
+                disabled={isClaseOnly}
                 className="w-full px-4 py-3 border rounded-sm disabled:bg-gray-100"
               >
                 <option value="">Selecciona categoría</option>
