@@ -24,6 +24,24 @@ export default function RegistrationSection() {
 
   const isClaseOnly = formData.activity === "clase";
 
+  // 🔹 Función profesional para calcular edad real
+  const calculateAge = (birthDate: string) => {
+    const today = new Date();
+    const birth = new Date(birthDate);
+
+    let age = today.getFullYear() - birth.getFullYear();
+    const monthDiff = today.getMonth() - birth.getMonth();
+
+    if (
+      monthDiff < 0 ||
+      (monthDiff === 0 && today.getDate() < birth.getDate())
+    ) {
+      age--;
+    }
+
+    return age;
+  };
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -37,40 +55,25 @@ export default function RegistrationSection() {
       // 🔹 Cambio de actividad
       if (name === "activity") {
         if (value === "clase") {
-          updated.category = "";
           updated.age = "";
-        }
-
-        if (
-          (value === "audicion" || value === "ambas") &&
-          updated.age
-        ) {
-          const ageNum = Number(updated.age);
-
-          if (ageNum >= 12 && ageNum <= 15) {
-            updated.category = "junior";
-          } else if (ageNum >= 16 && ageNum <= 18) {
-            updated.category = "senior";
-          } else {
-            updated.category = "";
-          }
+          updated.birthDate = "";
+          updated.category = "";
         }
       }
 
-      // 🔹 Cambio de edad
-      if (name === "age") {
+      // 🔹 Cambio de fecha de nacimiento
+      if (name === "birthDate") {
         if (!isAudition) return updated;
 
-        const ageNum = Number(value);
+        const age = calculateAge(value);
+        updated.age = age.toString();
 
-        if (ageNum < 12 || ageNum > 18) {
-          return prev;
-        }
-
-        if (ageNum >= 12 && ageNum <= 15) {
+        if (age >= 12 && age <= 15) {
           updated.category = "junior";
-        } else if (ageNum >= 16 && ageNum <= 18) {
+        } else if (age >= 16 && age <= 18) {
           updated.category = "senior";
+        } else {
+          updated.category = "";
         }
       }
 
@@ -85,10 +88,9 @@ export default function RegistrationSection() {
       !formData.fullName ||
       !formData.email ||
       !formData.phone ||
-      !formData.birthDate ||
       !formData.city ||
       !formData.activity ||
-      (!isClaseOnly && !formData.age)
+      (!isClaseOnly && !formData.birthDate)
     ) {
       toast.error("Por favor completa todos los campos obligatorios");
       return;
@@ -97,24 +99,8 @@ export default function RegistrationSection() {
     if (isAudition) {
       const age = Number(formData.age);
 
-      if (!formData.category) {
-        toast.error("Edad fuera del rango permitido (12-18)");
-        return;
-      }
-
-      if (
-        formData.category === "junior" &&
-        (age < 12 || age > 15)
-      ) {
-        toast.error("La categoría Junior es entre 12 y 15 años");
-        return;
-      }
-
-      if (
-        formData.category === "senior" &&
-        (age < 16 || age > 18)
-      ) {
-        toast.error("La categoría Senior es entre 16 y 18 años");
+      if (age < 12 || age > 18) {
+        toast.error("La edad permitida para audición es entre 12 y 18 años");
         return;
       }
     }
@@ -222,33 +208,46 @@ export default function RegistrationSection() {
               </select>
             </div>
 
-            {/* Edad */}
+            {/* Fecha de nacimiento */}
             <div>
               <label className="block text-sm font-cormorant font-bold mb-3">
-                Edad {!isClaseOnly && "*"}
+                Fecha de nacimiento * (sólo para audición)
+              </label>
+              <input
+                type="date"
+                name="birthDate"
+                value={formData.birthDate}
+                onChange={handleChange}
+                disabled={isClaseOnly}
+                className="w-full px-4 py-3 border rounded-sm disabled:bg-gray-100"
+              />
+            </div>
+
+            {/* Edad (automática) */}
+            <div>
+              <label className="block text-sm font-cormorant font-bold mb-3">
+                Edad (calculada automáticamente)
               </label>
               <input
                 type="number"
                 name="age"
                 value={formData.age}
-                onChange={handleChange}
-                disabled={isClaseOnly}
-                min={isAudition ? 12 : undefined}
-                max={isAudition ? 18 : undefined}
-                className="w-full px-4 py-3 border rounded-sm disabled:bg-gray-100"
+                readOnly
+                disabled
+                className="w-full px-4 py-3 border rounded-sm bg-gray-100"
               />
             </div>
 
             {/* Categoría */}
-            <div>
+            <div className="md:col-span-2">
               <label className="block text-sm font-cormorant font-bold mb-3">
-                Categoría * (sólo para audición)
+                Categoría (automática para audición)
               </label>
               <select
                 name="category"
                 value={formData.category}
-                disabled={isClaseOnly}
-                className="w-full px-4 py-3 border rounded-sm disabled:bg-gray-100"
+                disabled
+                className="w-full px-4 py-3 border rounded-sm bg-gray-100"
               >
                 <option value="">Selecciona categoría</option>
                 <option value="junior">Junior</option>
@@ -309,7 +308,7 @@ export default function RegistrationSection() {
               disabled={isSubmitting}
               className="w-full bg-gray-900 text-white py-6"
             >
-              {isSubmitting ? "Enviando..." : "Enviar Inscripción"}
+              {isSubmitting ? "Enviando..." : "Enviar Inscripción y Pagar"}
             </Button>
           </div>
         </form>
