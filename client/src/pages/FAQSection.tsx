@@ -8,6 +8,8 @@ import { ChevronDown } from "lucide-react";
  * - Preguntas y respuestas claras
  * - Animaciones suaves
  */
+
+
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -67,7 +69,7 @@ export default function FAQSection() {
       question:
         "¿Puedo participar de la CLASE MAGISTRAL sin experiencia profesional?",
       answer:
-        "Sí, Lo importante es demostrar tu pasión, disciplina y potencial. No es necesario tener experiencia profesional previa.",
+        "Sí. Lo importante es demostrar tu pasión, disciplina y potencial. No es necesario tener experiencia profesional previa.",
     },
   ];
 
@@ -76,19 +78,20 @@ export default function FAQSection() {
   };
 
   return (
-    <section
-      id="preguntasfrecuentes"
-      className="py-20 md:py-32 bg-white"
-    >
+    <section id="preguntasfrecuentes" className="py-20 md:py-32 bg-white">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
+        
+        {/* Título */}
+        <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-gray-900 mb-4 text-center leading-tight">
           Preguntas Frecuentes
         </h2>
 
-        <p className="text-lg font-lato text-gray-600 text-center mb-16">
+        {/* Subtítulo */}
+        <p className="text-lg font-lato text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed">
           Respuestas a las dudas más comunes sobre nuestro programa de becas y clases magistrales
         </p>
 
+        {/* Acordeón */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
@@ -99,7 +102,7 @@ export default function FAQSection() {
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-5 md:py-6 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors duration-200"
               >
-                <h3 className="text-left text-lg font-cormorant font-bold text-gray-900">
+                <h3 className="text-left text-2xl md:text-3xl font-cormorant font-bold text-gray-900 leading-snug">
                   {faq.question}
                 </h3>
 
@@ -113,7 +116,7 @@ export default function FAQSection() {
 
               {openIndex === index && (
                 <div className="px-6 py-6 bg-gray-50 border-t border-gray-200">
-                  <p className="text-base font-lato text-gray-700 leading-relaxed">
+                  <p className="text-lg font-lato text-gray-600 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -124,17 +127,17 @@ export default function FAQSection() {
 
         {/* Contacto adicional */}
         <div className="mt-16 pt-16 border-t border-gray-200 text-center">
-          <h3 className="text-2xl font-cormorant font-bold text-gray-900 mb-4">
+          <h3 className="text-3xl md:text-4xl font-cormorant font-bold text-gray-900 mb-4 leading-tight">
             ¿Tienes más preguntas?
           </h3>
 
-          <p className="text-lg font-lato text-gray-600 mb-6">
+          <p className="text-lg font-lato text-gray-600 mb-6 leading-relaxed">
             Contáctanos directamente para obtener más información
           </p>
 
           <a
             href="mailto:info@sebastianvinet.com"
-            className="inline-block text-lg font-cormorant font-bold text-gray-900 hover:text-gray-600 transition-colors duration-300 relative group"
+            className="inline-block text-2xl font-cormorant font-bold text-gray-900 hover:text-gray-600 transition-colors duration-300 relative group"
           >
             info@sebastianvinet.com
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
