@@ -90,6 +90,8 @@ export default function RegistrationSection() {
       !formData.phone ||
       !formData.city ||
       !formData.activity ||
+      !formData.school ||  
+      !formData.experience ||
       (!isClaseOnly && !formData.birthDate)
     ) {
       toast.error("Por favor completa todos los campos obligatorios");
@@ -158,6 +160,7 @@ export default function RegistrationSection() {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
+                required
                 className="w-full px-4 py-3 border rounded-sm"
               />
             </div>
@@ -172,6 +175,7 @@ export default function RegistrationSection() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                required
                 className="w-full px-4 py-3 border rounded-sm"
               />
             </div>
@@ -186,6 +190,7 @@ export default function RegistrationSection() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                required
                 className="w-full px-4 py-3 border rounded-sm"
               />
             </div>
@@ -199,6 +204,7 @@ export default function RegistrationSection() {
                 name="activity"
                 value={formData.activity}
                 onChange={handleChange}
+                required
                 className="w-full px-4 py-3 border rounded-sm"
               >
                 <option value="">Selecciona una opción</option>
@@ -219,6 +225,7 @@ export default function RegistrationSection() {
                 value={formData.birthDate}
                 onChange={handleChange}
                 disabled={isClaseOnly}
+                required={isAudition}  
                 className="w-full px-4 py-3 border rounded-sm disabled:bg-gray-100"
               />
             </div>
@@ -241,7 +248,7 @@ export default function RegistrationSection() {
             {/* Categoría */}
             <div className="md:col-span-2">
               <label className="block text-sm font-cormorant font-bold mb-3">
-                Categoría  (sólo para audición calculada automáticamente)
+                Categoría  (sólo para audición, calculada automáticamente)
               </label>
               <select
                 name="category"
@@ -264,6 +271,7 @@ export default function RegistrationSection() {
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
+                required
                 className="w-full px-4 py-3 border rounded-sm"
               >
                 <option value="">Selecciona ciudad</option>
@@ -275,13 +283,14 @@ export default function RegistrationSection() {
             {/* Escuela */}
             <div>
               <label className="block text-sm font-cormorant font-bold mb-3">
-                Escuela de Ballet Actual
+                Escuela de Ballet Actual *
               </label>
               <input
                 type="text"
                 name="school"
                 value={formData.school}
                 onChange={handleChange}
+                required
                 className="w-full px-4 py-3 border rounded-sm"
               />
             </div>
@@ -289,12 +298,13 @@ export default function RegistrationSection() {
             {/* Experiencia */}
             <div className="md:col-span-2">
               <label className="block text-sm font-cormorant font-bold mb-3">
-                Años de experiencia en Ballet y Contemporáneo
+                Años de experiencia en Ballet y Contemporáneo *
               </label>
               <textarea
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
+                required
                 rows={4}
                 className="w-full px-4 py-3 border rounded-sm"
               />
