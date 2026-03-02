@@ -357,7 +357,7 @@ export default function RegistrationSection() {
                 ? "Redirigiendo..."
                 : formData.activity
                   ? `Enviar Inscripción y Pagar $${amount.toLocaleString("es-CL")}`
-                  : "Enviar Inscripción y Pagar"}
+                  : "Botón FLOW"}
             </Button>
           </div>
         </form>
