@@ -139,11 +139,14 @@ export default function RegistrationSection() {
         body: JSON.stringify({
           amount,
           email: formData.email,
-          // (opcional) si luego quieres enviar más datos al backend, agrégalos aquí
-          // fullName: formData.fullName,
-          // phone: formData.phone,
-          // activity: formData.activity,
-          // city: formData.city,
+          nombre: formData.fullName,
+          phone: formData.phone,
+          city: formData.city,
+          activity: formData.activity,
+          category: formData.category,
+          birthDate: formData.birthDate,
+          school: formData.school,
+          experience: formData.experience
         }),
       });
 
