@@ -23,9 +23,9 @@ export default function RegistrationSection() {
 
   // ✅ Precios (AJUSTA ESTOS MONTOS A LOS REALES)
   const PRICES = {
-    audicion: 42000,
-    clase: 27000,
-    ambas: 57000,
+    audicion: 1200,
+    clase: 1400,
+    ambas: 2000,
   } as const;
 
   const amount = formData.activity
@@ -357,7 +357,7 @@ export default function RegistrationSection() {
                 ? "Redirigiendo..."
                 : formData.activity
                   ? `Enviar Inscripción y Pagar $${amount.toLocaleString("es-CL")}`
-                  : "Botón FLOW"}
+                  : "Enviar Inscripción y Pagar"}
             </Button>
           </div>
         </form>
