@@ -23,9 +23,9 @@ export default function RegistrationSection() {
 
   // ✅ Precios (AJUSTA ESTOS MONTOS A LOS REALES)
   const PRICES = {
-    audicion: 1200,
-    clase: 1400,
-    ambas: 2000,
+    audicion: 42000,
+    clase: 27000,
+    ambas: 57000,
   } as const;
 
   const amount = formData.activity

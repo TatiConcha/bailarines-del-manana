@@ -20,13 +20,7 @@ export default function PagoExitoso() {
             Volver al inicio
           </a>
 
-          <a
-            href="/#inscripcion"
-            className="px-8 py-3 border border-gray-900 text-gray-900 text-sm tracking-wide uppercase hover:bg-gray-100 transition"
-          >
-            Ver inscripción
-          </a>
-
+          
         </div>
 
         <p className="mt-6 text-sm text-gray-500">
