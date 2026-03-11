@@ -133,7 +133,7 @@ export default function RegistrationSection() {
 
     try {
       // ✅ Llamamos al backend que crea el pago en Flow
-      const res = await fetch("https://bailarines-del-manana-backend.onrender.com/create-payment", {
+      const res = await fetch("https://api.sebastianvinet.com/create-payment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
