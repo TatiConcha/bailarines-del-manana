@@ -97,9 +97,14 @@ export default function Footer() {
 
           <p>
             Diseño & Desarrollo Web —
-            <span className="font-medium text-gray-700 ml-1">
+            <a
+             href="https://wa.me/56984301071?text=Hola%2C%20vi%20tu%20dise%C3%B1o%20y%20desarrollo%20web%20y%20me%20gustar%C3%ADa%20cotizar%20una%20p%C3%A1gina%20web%20contigo."
+              target="_blank"
+              rel="noopener noreferrer"
+             className="font-medium text-gray-700 ml-1 hover:underline"
+               >
               La Rubia Digital
-            </span>
+            </a>
           </p>
         </div>
 
