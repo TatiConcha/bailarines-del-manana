@@ -1,6 +1,27 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+
+
+type CuposResponse = {
+  santiago: {
+    clase: number;
+    junior: number;
+    senior: number;
+  };
+  concon: {
+    clase: number;
+    junior: number;
+    senior: number;
+  };
+};
+
+const MAX_CUPOS = {
+  clase: 22,
+  junior: 22,
+  senior: 22,
+} as const;
+
 
 export default function RegistrationSection() {
   const [formData, setFormData] = useState({
@@ -17,6 +38,9 @@ export default function RegistrationSection() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [cupos, setCupos] = useState<CuposResponse | null>(null);
+  const [loadingCupos, setLoadingCupos] = useState(true);
 
   const isAudition = formData.activity === "audicion" || formData.activity === "ambas";
   const isClaseOnly = formData.activity === "clase";
@@ -46,6 +70,108 @@ export default function RegistrationSection() {
 
     return age;
   };
+
+    useEffect(() => {
+    const fetchCupos = async () => {
+      try {
+        setLoadingCupos(true);
+
+        const res = await fetch("https://api.sebastianvinet.com/cupos");
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data?.error || "Error al verificar disponibilidad. Intenta nuevamente.");
+        }
+
+        setCupos(data);
+      } catch (error) {
+        console.error(error);
+        toast.error("Error al verificar disponibilidad. Intenta nuevamente.");
+      } finally {
+        setLoadingCupos(false);
+      }
+    };
+
+    fetchCupos();
+  }, []);
+   
+     const getCuposOcupados = (city: string, type: "clase" | "junior" | "senior") => {
+    if (!cupos) return 0;
+    if (city !== "santiago" && city !== "concon") return 0;
+    return cupos[city][type];
+  };
+
+  const hasClaseCupo = (city: string) => {
+    if (!city) return true;
+    return getCuposOcupados(city, "clase") < MAX_CUPOS.clase;
+  };
+
+  const hasAuditionCupo = (city: string, category: string) => {
+    if (!city || !category) return true;
+    if (category !== "junior" && category !== "senior") return true;
+    return getCuposOcupados(city, category) < MAX_CUPOS[category];
+  };
+
+  const claseDisponible = useMemo(() => {
+    if (!formData.city) return true;
+    return hasClaseCupo(formData.city);
+  }, [formData.city, cupos]);
+
+  const auditionDisponible = useMemo(() => {
+    if (!formData.city || !formData.category) return true;
+    return hasAuditionCupo(formData.city, formData.category);
+  }, [formData.city, formData.category, cupos]);
+
+  const currentBlockMessage = useMemo(() => {
+    if (!formData.city || !formData.activity) return "";
+
+    if (formData.activity === "clase") {
+      if (!claseDisponible) {
+        return "✨ Los cupos para esta categoría ya se encuentran completos.";
+      }
+    }
+
+    if (formData.activity === "ambas") {
+      if (!claseDisponible) {
+        return "✨ Los cupos para esta categoría ya se encuentran completos.";
+      }
+
+      if (formData.category && !auditionDisponible) {
+        return "✨ Los cupos para esta categoría ya se encuentran completos.";
+      }
+    }
+
+    if (formData.activity === "audicion") {
+      if (formData.category && !auditionDisponible) {
+        return "✨ Los cupos para esta categoría ya se encuentran completos.";
+      }
+    }
+
+    return "";
+  }, [formData.city, formData.activity, formData.category, claseDisponible, auditionDisponible]);
+
+  const isSelectionBlocked = useMemo(() => {
+    if (!formData.city || !formData.activity) return false;
+
+    if (formData.activity === "clase") {
+      return !claseDisponible;
+    }
+
+    if (formData.activity === "ambas") {
+      if (!claseDisponible) return true;
+      if (formData.category && !auditionDisponible) return true;
+      return false;
+    }
+
+    if (formData.activity === "audicion") {
+      if (formData.category && !auditionDisponible) return true;
+      return false;
+    }
+
+    return false;
+  }, [formData.city, formData.activity, formData.category, claseDisponible, auditionDisponible]);
+
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -98,6 +224,16 @@ export default function RegistrationSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+        if (loadingCupos) {
+      toast.error("Error al verificar disponibilidad. Intenta nuevamente.");
+      return;
+    }
+
+    if (isSelectionBlocked) {
+      toast.error(currentBlockMessage || "✨ Los cupos para esta categoría ya se encuentran completos.");
+      return;
+    }
+
     if (
       !formData.fullName ||
       !formData.email ||
@@ -117,7 +253,7 @@ export default function RegistrationSection() {
       return;
     }
 
-    if (isAudition) {
+        if (isAudition) {
       const age = Number(formData.age);
       if (Number.isNaN(age)) {
         toast.error("Ingresa una fecha de nacimiento válida.");
@@ -127,6 +263,19 @@ export default function RegistrationSection() {
         toast.error("La edad permitida para audición es entre 12 y 18 años");
         return;
       }
+      if (!formData.category) {
+        toast.error("No se pudo determinar la categoría de audición.");
+        return;
+      }
+      if (!hasAuditionCupo(formData.city, formData.category)) {
+        toast.error("✨ Los cupos para esta categoría ya se encuentran completos.");
+        return;
+      }
+    }
+
+    if ((formData.activity === "clase" || formData.activity === "ambas") && !hasClaseCupo(formData.city)) {
+      toast.error("✨ Los cupos para esta categoría ya se encuentran completos.");
+      return;
     }
 
     setIsSubmitting(true);
@@ -242,9 +391,27 @@ export default function RegistrationSection() {
                 className="w-full px-4 py-3 border rounded-sm"
               >
                 <option value="">Selecciona una opción</option>
-                <option value="audicion">Audición para beca</option>
-                <option value="clase">Clase magistral</option>
-                <option value="ambas">Audición + Clase magistral</option>
+<option value="audicion">Audición para beca</option>
+
+<option
+  value="clase"
+  disabled={
+    (formData.city === "santiago" && !!cupos && cupos.santiago.clase >= MAX_CUPOS.clase) ||
+    (formData.city === "concon" && !!cupos && cupos.concon.clase >= MAX_CUPOS.clase)
+  }
+>
+  Clase magistral
+</option>
+
+<option
+  value="ambas"
+  disabled={
+    (formData.city === "santiago" && !!cupos && cupos.santiago.clase >= MAX_CUPOS.clase) ||
+    (formData.city === "concon" && !!cupos && cupos.concon.clase >= MAX_CUPOS.clase)
+  }
+>
+  Audición + Clase magistral
+</option>
               </select>
 
               {/* ✅ Resumen precio */}
@@ -256,6 +423,13 @@ export default function RegistrationSection() {
                 </div>
               )}
             </div>
+
+                           {currentBlockMessage && (
+                <div className="mt-4 p-4 rounded-sm border border-red-200 bg-red-50 text-red-700">
+                  {currentBlockMessage}
+                </div>
+              )}
+
 
             {/* Fecha de nacimiento */}
             <div>
@@ -355,12 +529,20 @@ export default function RegistrationSection() {
           </div>
 
           <div className="mt-8 pt-8 border-t">
-            <Button type="submit" disabled={isSubmitting} className="w-full bg-gray-900 text-white py-6">
-              {isSubmitting
-                ? "Redirigiendo..."
-                : formData.activity
-                  ? `Pagar ahora $${amount.toLocaleString("es-CL")}`
-                  : "Pagar"}
+            <Button
+              type="submit"
+               disabled={isSubmitting || loadingCupos || isSelectionBlocked}
+                className="w-full bg-gray-900 text-white py-6"
+                 >
+               {loadingCupos
+  ? "Cargando cupos..."
+  : isSubmitting
+    ? "Redirigiendo..."
+    : isSelectionBlocked
+      ? "Sin cupos disponibles"
+      : formData.activity
+        ? `Pagar ahora $${amount.toLocaleString("es-CL")}`
+        : "Pagar"}
             </Button>
           </div>
         </form>
