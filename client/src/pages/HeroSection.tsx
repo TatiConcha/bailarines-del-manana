@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button";
  * - Título y subtítulo elegantes
  * - Botón de acción
  */
+
+const INSCRIPCIONES_CERRADAS = true;
+
 export default function HeroSection() {
   return (
     <section id="inicio" className="relative pt-24 pb-0 overflow-hidden">
@@ -44,18 +47,28 @@ export default function HeroSection() {
               y participa en una clase magistral exclusiva.
             </span>
             </p>
-          <a href="#inscripcion" className="inline-block">
+
             <Button
-              size="lg"
-              className="bg-white text-gray-900 hover:bg-gray-100 font-cormorant text-lg px-8 py-6 rounded-none border-2 border-white"
-            >
-              Inscríbete ahora
-            </Button>
-          </a>
+  size="lg"
+  onClick={() => {
+    if (INSCRIPCIONES_CERRADAS) return;
+
+    document.getElementById("inscripcion")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
+  className={`font-cormorant text-lg px-8 py-6 rounded-none border-2 ${
+    INSCRIPCIONES_CERRADAS
+      ? "bg-gray-300 text-gray-500 border-gray-300 cursor-not-allowed"
+      : "bg-white text-gray-900 hover:bg-gray-100 border-white"
+  }`}
+>
+  {INSCRIPCIONES_CERRADAS ? "Inscripciones cerradas" : "Inscríbete ahora"}
+</Button>
+
           {/* Microcopy de urgencia */}
           <p className="text-sm mt-4 opacity-90">
-           Audición presencial en Chile (abril) y en Perú (agosto) • Cupos limitados • Convocatoria 2026
-          </p>
+           Convocatoria Chile finalizada • Próximas audiciones en Perú (agosto 2026)      </p>
         </div>
         </div>
     </section>

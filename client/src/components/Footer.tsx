@@ -1,3 +1,6 @@
+
+const INSCRIPCIONES_CERRADAS = true;
+
 /**
  * Footer Component - Pie de página elegante y minimalista
  * Diseño: Elegancia Contemporánea
@@ -43,17 +46,36 @@ export default function Footer() {
               </h4>
 
               <ul className="space-y-3">
-                {quickLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="group relative inline-block text-sm text-gray-600 hover:text-gray-900 transition-colors duration-300"
-                    >
-                      {link.label}
-                      <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-gray-700 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                  </li>
-                ))}
+
+             {quickLinks.map((link) => {
+  const isInscripcion = link.label === "Inscripción";
+
+  return (
+    <li key={link.href}>
+      <a
+        href={isInscripcion && INSCRIPCIONES_CERRADAS ? "#" : link.href}
+        onClick={(e) => {
+          if (isInscripcion && INSCRIPCIONES_CERRADAS) {
+            e.preventDefault();
+          }
+        }}
+        className={`group relative inline-block text-sm transition-colors duration-300 ${
+          isInscripcion && INSCRIPCIONES_CERRADAS
+            ? "text-gray-400 cursor-not-allowed"
+            : "text-gray-600 hover:text-gray-900"
+        }`}
+      >
+        {isInscripcion && INSCRIPCIONES_CERRADAS
+          ? "Inscripciones cerradas"
+          : link.label}
+
+        <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-gray-700 transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </li>
+  );
+})}
+                
+
               </ul>
             </nav>
           </div>

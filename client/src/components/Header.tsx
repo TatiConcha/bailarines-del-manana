@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
  * - Menú hamburguesa en mobile
  */
 
-
+const INSCRIPCIONES_CERRADAS = true;
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -35,16 +35,38 @@ export default function Header() {
 
         {/* Navegación Desktop */}
         <nav className="hidden md:flex gap-8">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="text-sm font-lato text-gray-700 hover:text-gray-900 transition-colors duration-300 relative group"
-            >
-              {item.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
-            </a>
-          ))}
+
+         {navItems.map((item) => {
+  const isInscripcion = item.label === "Inscripción";
+
+  return (
+    <a
+      key={item.label}
+      href={
+        isInscripcion && INSCRIPCIONES_CERRADAS
+          ? undefined
+          : item.href
+      }
+      onClick={(e) => {
+        if (isInscripcion && INSCRIPCIONES_CERRADAS) {
+          e.preventDefault();
+        }
+      }}
+      className={`text-sm font-lato transition-colors duration-300 relative group ${
+        isInscripcion && INSCRIPCIONES_CERRADAS
+          ? "text-gray-400 cursor-not-allowed"
+          : "text-gray-700 hover:text-gray-900"
+      }`}
+    >
+      {isInscripcion && INSCRIPCIONES_CERRADAS
+        ? "Inscripciones cerradas"
+        : item.label}
+
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+    </a>
+  );
+})}
+          
         </nav>
 
         {/* Botón Menú Mobile */}
