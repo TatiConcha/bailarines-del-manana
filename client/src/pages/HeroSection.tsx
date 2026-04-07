@@ -68,7 +68,7 @@ export default function HeroSection() {
 
           {/* Microcopy de urgencia */}
           <p className="text-sm mt-4 opacity-90">
-           Convocatoria Chile finalizada • Próximas audiciones en Perú (agosto 2026)      </p>
+           Convocatoria Chile finalizada • Próximas audiciones Perú (agosto 2026)      </p>
         </div>
         </div>
     </section>

@@ -22,8 +22,10 @@ const MAX_CUPOS = {
   senior: 22,
 } as const;
 
+const INSCRIPCIONES_CERRADAS = true;
 
 export default function RegistrationSection() {
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -326,6 +328,8 @@ export default function RegistrationSection() {
     }
   };
 
+    if (INSCRIPCIONES_CERRADAS) return null;
+    
   return (
     <section id="inscripcion" className="py-20 md:py-32 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
