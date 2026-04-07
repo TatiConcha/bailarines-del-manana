@@ -24,7 +24,7 @@ export default function FAQSection() {
       question:
         "¿Cuál es el costo de inscripción a la AUDICIÓN en CHILE?",
       answer:
-        "El costo de inscripción a la audición es de $42.000 CLP y el costo de inscripción a la audición más la clase magistral es de $57.000 CLP. Este monto cubre la evaluación de tu solicitud y la participación en las audiciones presenciales.",
+        "El costo de inscripción a la audición es de $42.000 CLP y el costo de inscripción a la audición más la clase magistral es de $57.000 CLP. Este monto cubre la evaluación de tu solicitud y la participación en las audiciones presenciales. Una vez pagada la inscripción a la audición no se reembolsará el servicio.",
     },
     {
       question: "¿Dónde y cuándo se realizan las AUDICIONES?",
@@ -57,7 +57,7 @@ export default function FAQSection() {
       question:
         "¿Cuál es el costo de inscripción a la CLASE MAGISTRAL en CHILE?",
       answer:
-        "El costo de inscripción a la clase magistral es de $27.000 CLP.",
+        "El costo de inscripción a la clase magistral es de $27.000 CLP. Una vez pagada la inscripción a la clase magistral no se reembolsará el servicio.",
     },
     {
       question:
