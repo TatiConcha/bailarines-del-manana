@@ -4,12 +4,12 @@ import { toast } from "sonner";
 
 
 type CuposResponse = {
-  santiago: {
+  lima: {
     clase: number;
     junior: number;
     senior: number;
   };
-  concon: {
+  trujillo: {
     clase: number;
     junior: number;
     senior: number;
@@ -17,9 +17,9 @@ type CuposResponse = {
 };
 
 const MAX_CUPOS = {
-  clase: 22,
-  junior: 22,
-  senior: 22,
+  clase: 30,
+  junior: 30,
+  senior: 30,
 } as const;
 
 const INSCRIPCIONES_CERRADAS = true;
@@ -49,9 +49,9 @@ export default function RegistrationSection() {
 
   // ✅ Precios (AJUSTA ESTOS MONTOS A LOS REALES)
   const PRICES = {
-    audicion: 42000,
-    clase: 27000,
-    ambas: 57000,
+    audicion: 156,
+    clase: 104,
+    ambas: 208,
   } as const;
 
   const amount = formData.activity
@@ -99,7 +99,7 @@ export default function RegistrationSection() {
    
      const getCuposOcupados = (city: string, type: "clase" | "junior" | "senior") => {
     if (!cupos) return 0;
-    if (city !== "santiago" && city !== "concon") return 0;
+    if (city !== "lima" && city !== "trujillo") return 0;
     return cupos[city][type];
   };
 
@@ -334,7 +334,7 @@ export default function RegistrationSection() {
     <section id="inscripcion" className="py-20 md:py-32 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-5xl md:text-6xl font-cormorant font-bold text-gray-900 mb-4 text-center">
-          Inscripción Audiciones Chile 2026
+          Inscripción Audiciones Perú 2026
         </h2>
 
         <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 md:p-12">
@@ -400,8 +400,8 @@ export default function RegistrationSection() {
 <option
   value="clase"
   disabled={
-    (formData.city === "santiago" && !!cupos && cupos.santiago.clase >= MAX_CUPOS.clase) ||
-    (formData.city === "concon" && !!cupos && cupos.concon.clase >= MAX_CUPOS.clase)
+    (formData.city === "lima" && !!cupos && cupos.lima.clase >= MAX_CUPOS.clase) ||
+    (formData.city === "trujillo" && !!cupos && cupos.trujillo.clase >= MAX_CUPOS.clase)
   }
 >
   Clase magistral
@@ -410,8 +410,8 @@ export default function RegistrationSection() {
 <option
   value="ambas"
   disabled={
-    (formData.city === "santiago" && !!cupos && cupos.santiago.clase >= MAX_CUPOS.clase) ||
-    (formData.city === "concon" && !!cupos && cupos.concon.clase >= MAX_CUPOS.clase)
+    (formData.city === "lima" && !!cupos && cupos.lima.clase >= MAX_CUPOS.clase) ||
+    (formData.city === "trujillo" && !!cupos && cupos.trujillo.clase >= MAX_CUPOS.clase)
   }
 >
   Audición + Clase magistral
@@ -496,8 +496,8 @@ export default function RegistrationSection() {
                 className="w-full px-4 py-3 border rounded-sm"
               >
                 <option value="">Selecciona ciudad</option>
-                <option value="santiago">Santiago</option>
-                <option value="concon">Concón</option>
+                <option value="santiago">Lima</option>
+                <option value="concon">Trujillo</option>
               </select>
             </div>
 

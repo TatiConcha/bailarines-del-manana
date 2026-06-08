@@ -22,19 +22,19 @@ export default function FAQSection() {
     },
     {
       question:
-        "¿Cuál es el costo de inscripción a la AUDICIÓN en CHILE?",
+        "¿Cuál es el costo de inscripción a la AUDICIÓN en PERÚ?",
       answer:
-        "El costo de inscripción a la audición es de $42.000 CLP y el costo de inscripción a la audición más la clase magistral es de $57.000 CLP. Este monto cubre la evaluación de tu solicitud y la participación en las audiciones presenciales. Una vez pagada la inscripción a la audición no se reembolsará el servicio.",
+        "El costo de inscripción a la audición es de S/ 156 y el costo de inscripción a la audición más la clase magistral es de S/ 208. Este monto cubre la evaluación de tu solicitud y la participación en las audiciones presenciales. Una vez pagada la inscripción a la audición no se reembolsará el servicio.",
     },
     {
       question: "¿Dónde y cuándo se realizan las AUDICIONES?",
       answer:
-        "Las audiciones se realizan el 11 de abril 2026 en la Escuela de Ballet Andrea Aedo (Avenida Concón Reñaca 41, local 27) en Concón, Valparaíso y el 12 de abril 2026 en la Escuela Royal Dance Chile (Diego de Almagro 5326, metro Principe de Gales) en Ñuñoa, Santiago.",
+        "Las audiciones se realizan el 08 de agosto 2026 en el Teatro Municipal de Lima (377 Jirón Ica) en Lima y el 09 de agosto 2026 en Visión de la Danza Escuela Profesional de Ballet (Jr. Gamarra 232) en Trujillo.",
     },
     {
       question: "¿Cuánto cubre la beca?",
       answer:
-        "Las becas solo cubren la COLEGIATURA de los cursos de verano, no cubren pasaje, visas, hospedaje, a menos que esté especificado.",
+        "Las becas solo cubren la COLEGIATURA de los cursos de verano, no cubren pasaje, visas, hospedaje, asesorías, a menos que esté especificado.",
     },
     {
       question:
@@ -55,15 +55,15 @@ export default function FAQSection() {
     },
     {
       question:
-        "¿Cuál es el costo de inscripción a la CLASE MAGISTRAL en CHILE?",
+        "¿Cuál es el costo de inscripción a la CLASE MAGISTRAL en PERÚ?",
       answer:
-        "El costo de inscripción a la clase magistral es de $27.000 CLP. Una vez pagada la inscripción a la clase magistral no se reembolsará el servicio.",
+        "El costo de inscripción a la clase magistral es de S/ 104. Una vez pagada la inscripción a la clase magistral no se reembolsará el servicio.",
     },
     {
       question:
         "¿Dónde y cuándo se realizan las CLASES MAGISTRALES?",
       answer:
-        "Las audiciones se realizan el 11 de abril 2026 en la Escuela de Ballet Andrea Aedo (Avenida Concón Reñaca 41, local 27) en Concón, Valparaíso y el 12 de abril 2026 en la Escuela Royal Dance Chile (Diego de Almagro 5326, metro Principe de Gales) en Ñuñoa, Santiago.",
+        "Las clases magistrales se realizan el 08 de agosto 2026 en el Teatro Municipal de Lima (377 Jirón Ica) en Lima y el 09 de agosto 2026 en Visión de la Danza Escuela Profesional de Ballet (Jr. Gamarra 232) en Trujillo.",
     },
     {
       question:

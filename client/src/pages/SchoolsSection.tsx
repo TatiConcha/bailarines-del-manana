@@ -52,12 +52,12 @@ export default function SchoolsSection() {
     },
  {
       name: "Westchester Ballet Company",
-      country: "Chile",
+      country: "Chile y Perú",
       city: "Nueva York, Estados Unidos",
       description:
         "Nuestras clases fortalecen el cuerpo y la confianza. Y nuestros programas de verano continúan abriendo nuevos caminos donde antes no los había. Este verano, bajo la dirección de Sebastián Vinet, cada alumno vivirá una experiencia formativa exigente, inspiradora y transformadora.",
       image: "/images/Westchester-Ballet-Company-image.jpg",
-      program: ["Curso intensivo de verano 2026 (Chile), incluye hospedaje"],
+      program: ["Curso intensivo de verano 2026 (Chile), 2027 (Perú)"],
     },
   ];
 
