@@ -422,7 +422,7 @@ export default function RegistrationSection() {
               {formData.activity && (
                 <div className="mt-4 p-4 bg-gray-100 rounded-sm">
                   <p className="font-cormorant font-bold text-lg">
-                    Total a pagar: ${amount.toLocaleString("es-CL")}
+                    Total a pagar: S/ {amount.toLocaleString("es-PE")}
                   </p>
                 </div>
               )}
@@ -496,8 +496,8 @@ export default function RegistrationSection() {
                 className="w-full px-4 py-3 border rounded-sm"
               >
                 <option value="">Selecciona ciudad</option>
-                <option value="santiago">Lima</option>
-                <option value="concon">Trujillo</option>
+                <option value="lima">Lima</option>
+                <option value="trujillo">Trujillo</option>
               </select>
             </div>
 
@@ -545,7 +545,7 @@ export default function RegistrationSection() {
     : isSelectionBlocked
       ? "Sin cupos disponibles"
       : formData.activity
-        ? `Pagar ahora $${amount.toLocaleString("es-CL")}`
+        ? `Pagar ahora S/ ${amount.toLocaleString("es-PE")}`
         : "Pagar"}
             </Button>
           </div>
