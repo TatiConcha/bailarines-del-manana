@@ -13,6 +13,9 @@ const INSCRIPCIONES_CERRADAS = false;
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const isHome = window.location.pathname === "/";
+  const base = isHome ? "" : "/";
+
   const navItems = [
     { label: "Inicio", href: "#inicio" },
     { label: "Fundador", href: "#fundador" },

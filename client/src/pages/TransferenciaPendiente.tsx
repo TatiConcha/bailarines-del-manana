@@ -2,6 +2,17 @@ import Header from "@/components/Header";
 import { useEffect } from "react";
 import { AlertTriangle } from "lucide-react";
 
+const ACTIVITY_LABELS: Record<string, string> = {
+  audicion: "Audición para beca",
+  clase: "Clase magistral",
+  ambas: "Audición + Clase magistral",
+};
+
+const CATEGORY_LABELS: Record<string, string> = {
+  junior: "Junior (12-15 años)",
+  senior: "Senior (16-18 años)",
+};
+
 export default function TransferenciaPendiente() {
 
   const amount = localStorage.getItem("inscripcion_amount");
@@ -40,12 +51,13 @@ const name = localStorage.getItem("inscripcion_name");
               )}
 
               {activity && (
-                <p><strong>Actividad:</strong> {activity}</p>
-              )}
+  <p><strong>Actividad:</strong> {ACTIVITY_LABELS[activity] ?? activity}</p>
+)}
 
-              {category && (
-                <p><strong>Categoría:</strong> {category}</p>
-              )}
+{category && activity !== "clase" && (
+  <p><strong>Categoría:</strong> {CATEGORY_LABELS[category] ?? category}</p>
+)}
+
             </div>
           )}
 
@@ -69,7 +81,7 @@ const name = localStorage.getItem("inscripcion_name");
 
           {/* IMPORTANTE actualizado */}
           <div className="bg-yellow-50 border border-yellow-300 p-4 rounded flex gap-2 items-start">
-            <AlertTriangle className="w-5 h-5 mt-1 text-yellow-700" />
+            <AlertTriangle className="w-5 h-5 mt-0.5 text-yellow-700 shrink-0" />
             <p className="font-bold">
               Importante: El cupo quedará reservado únicamente una vez que la transferencia haya sido recibida y validada por la organización.
             </p>
