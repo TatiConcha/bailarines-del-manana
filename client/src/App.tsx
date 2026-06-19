@@ -13,10 +13,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
        <Route path={"/transferencia-pendiente"} component={TransferenciaPendiente} />
-       <Route
-  
-  
-/>
+      
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

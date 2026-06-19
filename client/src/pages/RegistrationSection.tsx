@@ -315,7 +315,7 @@ export default function RegistrationSection() {
     localStorage.setItem("inscripcion_amount", String(amount));
 localStorage.setItem("inscripcion_name", formData.fullName);
 
-window.location.href = "/TransferenciaPendiente";
+window.location.href = "/transferencia-pendiente";
     }, 800);
 
   } catch (error) {
