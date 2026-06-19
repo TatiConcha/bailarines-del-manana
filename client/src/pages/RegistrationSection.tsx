@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-
+import { useLocation } from "wouter";
 
 
 type CuposResponse = {
@@ -26,6 +26,8 @@ const MAX_CUPOS = {
 const INSCRIPCIONES_CERRADAS = false;
 
 export default function RegistrationSection() {
+
+  const [, setLocation] = useLocation();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -314,8 +316,7 @@ export default function RegistrationSection() {
     setTimeout(() => {
     localStorage.setItem("inscripcion_amount", String(amount));
 localStorage.setItem("inscripcion_name", formData.fullName);
-
-window.location.href = "/transferencia-pendiente";
+    setLocation("/transferencia-pendiente");
     }, 800);
 
   } catch (error) {
