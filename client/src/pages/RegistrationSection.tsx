@@ -316,6 +316,8 @@ export default function RegistrationSection() {
     setTimeout(() => {
     localStorage.setItem("inscripcion_amount", String(amount));
 localStorage.setItem("inscripcion_name", formData.fullName);
+localStorage.setItem("inscripcion_activity", formData.activity);
+localStorage.setItem("inscripcion_category", formData.category);
     setLocation("/transferencia-pendiente");
     }, 800);
 
