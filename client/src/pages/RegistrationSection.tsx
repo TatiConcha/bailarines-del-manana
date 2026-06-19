@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
 
+
 type CuposResponse = {
   lima: {
     clase: number;
@@ -283,21 +284,21 @@ export default function RegistrationSection() {
     setIsSubmitting(true);
 
     try {
-      // ✅ Llamamos al backend que crea el pago en Flow
-      const res = await fetch("https://api.sebastianvinet.com/create-payment", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          amount,
-          email: formData.email,
-          nombre: formData.fullName,
-          phone: formData.phone,
-          city: formData.city,
-          activity: formData.activity,
-          category: formData.category,
-          birthDate: formData.birthDate,
-          school: formData.school,
-          experience: formData.experience
+      // ✅ SOLO INSCRIPCIÓN (SIN PAGO)
+      const res = await fetch("https://api.sebastianvinet.com/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        amount,
+        email: formData.email,
+        nombre: formData.fullName,
+        phone: formData.phone,
+        city: formData.city,
+        activity: formData.activity,
+        category: formData.category,
+        birthDate: formData.birthDate,
+        school: formData.school,
+        experience: formData.experience,
         }),
       });
 
@@ -305,27 +306,22 @@ export default function RegistrationSection() {
 
       if (!res.ok) {
         console.error("Error /create-payment:", data);
-        toast.error(data?.error || "Error al iniciar el pago. Intenta nuevamente.");
+        toast.error(data?.error || "Error al enviar inscripción. Intenta nuevamente.");
         return;
       }
 
-      // ✅ Flow suele devolver { url, token }
-      const paymentUrl = data?.url && data?.token ? `${data.url}?token=${data.token}` : null;
+      // 🔥 REDIRECCIÓN A INFO DE TRANSFERENCIA
+    setTimeout(() => {
+     window.location.href = "/TransferenciaPendiente";
+    }, 800);
 
-      if (!paymentUrl) {
-        console.error("Respuesta inesperada de Flow:", data);
-        toast.error("No se pudo generar la URL de pago.");
-        return;
-      }
-
-      // ✅ Redirigir a Flow para pagar
-      window.location.href = paymentUrl;
-    } catch (error) {
-      console.error(error);
-      toast.error("Error al conectar con el sistema de pago. Intenta nuevamente.");
-    } finally {
-      setIsSubmitting(false);
-    }
+  } catch (error) {
+    console.error(error);
+    toast.error("Error al conectar con el servidor");
+  } finally {
+    setIsSubmitting(false);
+  }
+      
   };
 
     if (INSCRIPCIONES_CERRADAS) return null;
@@ -545,7 +541,7 @@ export default function RegistrationSection() {
     : isSelectionBlocked
       ? "Sin cupos disponibles"
       : formData.activity
-        ? `Pagar ahora S/ ${amount.toLocaleString("es-PE")}`
+        ? `Enviar Inscripción ${amount.toLocaleString("es-PE")}`
         : "Pagar"}
             </Button>
           </div>
