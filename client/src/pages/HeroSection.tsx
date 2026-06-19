@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
  * - Botón de acción
  */
 
-const INSCRIPCIONES_CERRADAS = true;
+const INSCRIPCIONES_CERRADAS = false;
 
 export default function HeroSection() {
   return (

@@ -23,7 +23,7 @@ const MAX_CUPOS = {
   senior: 30,
 } as const;
 
-const INSCRIPCIONES_CERRADAS = true;
+const INSCRIPCIONES_CERRADAS = false;
 
 export default function RegistrationSection() {
 

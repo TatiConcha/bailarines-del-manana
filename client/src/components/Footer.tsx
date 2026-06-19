@@ -1,5 +1,5 @@
 
-const INSCRIPCIONES = false;
+const INSCRIPCIONES_CERRADAS = false;
 
 /**
  * Footer Component - Pie de página elegante y minimalista
