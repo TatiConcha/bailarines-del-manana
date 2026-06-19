@@ -17,12 +17,12 @@ export default function Header() {
   const base = isHome ? "" : "/";
 
   const navItems = [
-    { label: "Inicio", href: "#inicio" },
-    { label: "Fundador", href: "#fundador" },
-    { label: "Escuelas", href: "#escuelas" },
-    { label: "Ganadores", href: "#ganadores" },
-    { label: "Inscripción", href: "#inscripcion" },
-    { label: "Preguntas", href: "#preguntasfrecuentes" },
+     { label: "Inicio", href: `${base}#inicio` },
+    { label: "Fundador", href: `${base}#fundador` },
+    { label: "Escuelas", href: `${base}#escuelas` },
+    { label: "Ganadores", href: `${base}#ganadores` },
+    { label: "Inscripción", href: `${base}#inscripcion` },
+    { label: "Preguntas", href: `${base}#preguntasfrecuentes` },
   ];
 
   return (
