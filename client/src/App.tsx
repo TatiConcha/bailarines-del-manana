@@ -2,7 +2,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
-import PagoExitoso from "./pages/PagoExitoso";
 import TransferenciaPendiente from "./pages/TransferenciaPendiente";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -13,10 +12,10 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-       <Route path={"/pago-exitoso"} component={PagoExitoso} />
+       <Route path={"/transferencia-pendiente"} component={TransferenciaPendiente} />
        <Route
-  path={"/instrucciones-pago"}
-  component={TransferenciaPendiente}
+  
+  
 />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
