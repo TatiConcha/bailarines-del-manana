@@ -312,7 +312,10 @@ export default function RegistrationSection() {
 
       // 🔥 REDIRECCIÓN A INFO DE TRANSFERENCIA
     setTimeout(() => {
-     window.location.href = "/TransferenciaPendiente";
+    localStorage.setItem("inscripcion_amount", String(amount));
+localStorage.setItem("inscripcion_name", formData.fullName);
+
+window.location.href = "/TransferenciaPendiente";
     }, 800);
 
   } catch (error) {
@@ -540,9 +543,7 @@ export default function RegistrationSection() {
     ? "Redirigiendo..."
     : isSelectionBlocked
       ? "Sin cupos disponibles"
-      : formData.activity
-        ? `Enviar Inscripción ${amount.toLocaleString("es-PE")}`
-        : "Pagar"}
+        : "Enviar Inscripción"}
             </Button>
           </div>
         </form>

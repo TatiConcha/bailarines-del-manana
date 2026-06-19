@@ -1,4 +1,18 @@
+
+import { useEffect } from "react";
+
 export default function TransferenciaPendiente() {
+
+  const amount = localStorage.getItem("inscripcion_amount");
+const name = localStorage.getItem("inscripcion_name");
+
+ useEffect(() => {
+    return () => {
+      localStorage.removeItem("inscripcion_amount");
+      localStorage.removeItem("inscripcion_name");
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="max-w-2xl w-full bg-white shadow-lg rounded-lg p-8">
@@ -6,6 +20,19 @@ export default function TransferenciaPendiente() {
           Inscripción recibida correctamente
         </h1>
 
+{amount && (
+  <div className="bg-green-50 border border-green-300 p-4 rounded mb-6">
+    <p>
+      <strong>Monto a transferir:</strong> S/ {amount}
+    </p>
+
+    {name && (
+      <p>
+        <strong>Participante:</strong> {name}
+      </p>
+    )}
+  </div>
+)}
         <p className="mb-6">
           Tu inscripción ha sido registrada exitosamente y se encuentra
           pendiente de pago.
