@@ -75,7 +75,7 @@ const name = localStorage.getItem("inscripcion_name");
             <p><strong>Tipo de cuenta:</strong> Ahorro</p>
             <p><strong>Número de cuenta:</strong> 19417052559006</p>
             <p><strong>DNI:</strong> 75228516</p>
-            <p><strong>Correo:</strong> bailarinesdelmanana91@gmail.com</p>
+            <p><strong>Correo:</strong> info@sebastianvinet.com</p>
             <p><strong>Nota:</strong> Indicar en la transferencia el nombre del participante</p>
           </div>
 
