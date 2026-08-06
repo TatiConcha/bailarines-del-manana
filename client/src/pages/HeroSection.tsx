@@ -68,7 +68,7 @@ export default function HeroSection() {
 
           {/* Microcopy de urgencia */}
           <p className="text-sm mt-4 opacity-90">
-           • Próximas audiciones 08 agosto Lima y 09 agosto Trujillo, Perú  </p>
+           ¡Muchas gracias por su participación Chile y Perú!  </p>
         </div>
         </div>
     </section>
