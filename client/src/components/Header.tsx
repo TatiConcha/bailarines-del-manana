@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
  * - Menú hamburguesa en mobile
  */
 
-const INSCRIPCIONES_CERRADAS = false;
+const INSCRIPCIONES_CERRADAS = true;
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
